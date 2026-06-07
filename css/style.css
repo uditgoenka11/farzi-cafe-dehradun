@@ -4,21 +4,22 @@
    ============================================================ */
 
 :root {
-  /* Core palette — matte black + gold + off-white per brand brief */
-  --color-bg: #0F0F0F;
-  --color-bg-2: #181818;
-  --color-bg-3: #242424;
-  --color-text: #F5F5F5;
-  --color-text-dim: #BFB9AD;
-  --color-muted: #807a6e;
+  /* Core palette — antique warm gold + matte black + off-white */
+  --color-bg: #0D0D0D;
+  --color-bg-2: #161616;
+  --color-bg-3: #1f1f1f;
+  --color-text: #F5F0E6;
+  --color-text-dim: #B7AFA0;
+  --color-muted: #7a7367;
 
-  --color-gold: #D4AF37;
-  --color-gold-light: #E8C961;
-  --color-gold-deep: #9A7E22;
+  --color-gold: #D4A14A;          /* warm burnished — old whisky decanter */
+  --color-gold-light: #E7C279;
+  --color-gold-deep: #A87528;
+  --color-accent-soft: #D4A14A;   /* alias used by Hillcrest-style sections */
 
   /* RGB tokens for transparent overlays */
-  --color-gold-rgb: 212 175 55;
-  --color-bg-rgb: 15 15 15;
+  --color-gold-rgb: 212 161 74;
+  --color-bg-rgb: 13 13 13;
 
   --color-accent: #c1392b;
   --color-line: #2a2a2a;
@@ -84,6 +85,19 @@ p { margin: 0 0 1.2em; color: var(--color-text-dim); }
   font-weight: 600;
   margin-bottom: 1.2rem;
   display: inline-block;
+}
+/* Editorial Roman numeral marker — used on hero/section headers */
+.roman {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.92rem;
+  color: var(--color-gold);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(212,161,74,0.35);
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.02em;
 }
 
 .gold { color: var(--color-gold); }
@@ -220,14 +234,15 @@ p { margin: 0 0 1.2em; color: var(--color-text-dim); }
   .nav-links a::after { display: none; }
 }
 
-/* ----- Hero ----- */
+/* ----- Hero — cinematic, editorial, bottom-anchored ----- */
 .hero {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+  height: 100vh;
+  min-height: 720px;
   overflow: hidden;
   isolation: isolate;
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 .hero-media,
 .hero-media video,
@@ -237,58 +252,158 @@ p { margin: 0 0 1.2em; color: var(--color-text-dim); }
   width: 100%; height: 100%;
   object-fit: cover;
   z-index: -2;
+  animation: kenBurns 30s ease-in-out infinite alternate;
+}
+@keyframes kenBurns {
+  from { transform: scale(1.0) translate(0,0); }
+  to   { transform: scale(1.08) translate(-1.5%, -1%); }
 }
 .hero::after {
   content: '';
   position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.35) 40%, rgba(13,13,13,0.95) 100%),
-    linear-gradient(90deg, rgba(13,13,13,0.6) 0%, transparent 60%);
+    linear-gradient(180deg, rgba(13,13,13,0.35) 0%, rgba(13,13,13,0.25) 35%, rgba(13,13,13,0.80) 100%),
+    linear-gradient(90deg, rgba(13,13,13,0.55) 0%, transparent 55%);
   z-index: -1;
 }
+/* Cinematic letterboxes */
+.hero-letterbox-top,
+.hero-letterbox-bottom {
+  position: absolute; left: 0; right: 0;
+  height: 7vh;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-letterbox-top    { top: 0;    background: linear-gradient(180deg, rgba(13,13,13,0.65) 0%, transparent 100%); }
+.hero-letterbox-bottom { bottom: 0; background: linear-gradient(0deg,   rgba(13,13,13,0.75) 0%, transparent 100%); }
+/* Side mark — vertical text on left edge */
+.hero-side-mark {
+  position: absolute;
+  left: 1.6rem; top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left center;
+  font-family: var(--font-accent);
+  font-size: 0.62rem;
+  letter-spacing: 0.5em;
+  color: var(--color-text-dim);
+  opacity: 0.55;
+  text-transform: uppercase;
+  z-index: 2;
+  white-space: nowrap;
+  display: none;
+}
+@media (min-width: 1200px) { .hero-side-mark { display: block; } }
+/* Year mark — top-right */
+.hero-corner-mark {
+  position: absolute;
+  top: 2rem; right: 2.2rem;
+  z-index: 2;
+  text-align: right;
+  display: none;
+}
+@media (min-width: 880px) { .hero-corner-mark { display: block; } }
+.hero-corner-mark .roman {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-gold);
+  line-height: 1;
+}
+.hero-corner-mark .est-label {
+  font-family: var(--font-accent);
+  font-size: 0.58rem;
+  letter-spacing: 0.42em;
+  color: var(--color-text-dim);
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
 .hero-content {
-  max-width: 760px;
-  padding: 8rem 0 5rem;
-  animation: fadeUp 1s ease both;
+  position: relative;
+  height: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 3;
+}
+.hero .eyebrow {
+  font-family: var(--font-accent);
+  font-size: 0.66rem;
+  letter-spacing: 0.5em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 2.4rem;
+  opacity: 0;
+  animation: fadeUp 1.4s ease 0.3s forwards;
 }
 .hero h1 {
-  margin: 0 0 1.2rem;
+  margin: 0 0 1.6rem;
   font-family: var(--font-display);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(3.6rem, 11vw, 9.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+  max-width: 14ch;
+  opacity: 0;
+  animation: fadeUp 1.6s ease 0.55s forwards;
+  text-shadow: 0 4px 40px rgba(0,0,0,0.45);
 }
-.hero h1 .display-line {
-  display: block;
-  font-style: normal;
-  font-family: var(--font-accent);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  font-size: 0.6em;
-  margin-top: 0.4em;
-  text-transform: uppercase;
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
   color: var(--color-gold);
 }
+.hero-bottom-row {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 1.4s ease 0.85s forwards;
+}
 .hero p.lead {
-  font-size: 1.15rem;
-  color: var(--color-text-dim);
-  max-width: 540px;
-  margin-bottom: 2.2rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+  color: var(--color-text);
+  max-width: 36ch;
+  line-height: 1.5;
+  margin: 0;
 }
 .hero-actions {
-  display: flex; gap: 1rem; flex-wrap: wrap;
+  display: flex; gap: 0.9rem; flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+  .hero-content { padding-bottom: 4rem; }
+  .hero h1 { max-width: 12ch; }
+  .hero-bottom-row { flex-direction: column; gap: 1.6rem; align-items: flex-start; }
 }
 
 .scroll-cue {
   position: absolute;
-  left: 50%; bottom: 2rem;
+  left: 50%; bottom: 1.4rem;
   transform: translateX(-50%);
   font-family: var(--font-accent);
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
+  font-size: 0.62rem;
+  letter-spacing: 0.4em;
   color: var(--color-text-dim);
-  writing-mode: vertical-rl;
   text-transform: uppercase;
   animation: bounce 2.4s ease-in-out infinite;
+  z-index: 3;
+}
+.scroll-cue::after {
+  content: '';
+  display: block;
+  width: 1px; height: 28px;
+  background: linear-gradient(180deg, var(--color-gold) 0%, transparent 100%);
+  margin: 10px auto 0;
 }
 
 @keyframes fadeUp {
@@ -713,44 +828,53 @@ article.post .post-meta {
 .btn-whatsapp:hover { background: var(--color-whatsapp-dark); border-color: var(--color-whatsapp-dark); color: #fff; }
 .btn-whatsapp svg { width: 18px; height: 18px; flex-shrink: 0; }
 
-/* ----- Floating WhatsApp FAB ----- */
+/* ----- Floating WhatsApp FAB — discreet ----- */
 .fab-whatsapp {
   position: fixed;
-  bottom: 22px; right: 22px;
+  bottom: 24px; right: 24px;
   z-index: 90;
-  width: 58px; height: 58px;
+  width: 50px; height: 50px;
   border-radius: 50%;
   background: var(--color-whatsapp);
-  box-shadow: 0 10px 28px -8px rgba(37, 211, 102, 0.6);
+  box-shadow: 0 8px 24px -8px rgba(37, 211, 102, 0.45);
   display: flex; align-items: center; justify-content: center;
   color: #fff;
-  transition: transform var(--transition), box-shadow var(--transition);
-  animation: fabPulse 2.6s ease-in-out infinite;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s ease, box-shadow var(--transition);
 }
-.fab-whatsapp:hover { transform: scale(1.08); }
-.fab-whatsapp svg { width: 30px; height: 30px; }
-@keyframes fabPulse {
-  0%, 100% { box-shadow: 0 10px 28px -8px rgba(37,211,102,0.6); }
-  50%      { box-shadow: 0 12px 36px -6px rgba(37,211,102,0.8); }
+.fab-whatsapp.in {
+  opacity: 0.95;
+  pointer-events: auto;
+  transform: translateY(0);
 }
+.fab-whatsapp:hover {
+  opacity: 1;
+  box-shadow: 0 12px 28px -8px rgba(37,211,102,0.6);
+}
+.fab-whatsapp svg { width: 24px; height: 24px; }
 @media (max-width: 720px) {
-  .fab-whatsapp { bottom: 84px; width: 52px; height: 52px; }
-  .fab-whatsapp svg { width: 26px; height: 26px; }
+  .fab-whatsapp { bottom: 84px; width: 46px; height: 46px; }
+  .fab-whatsapp svg { width: 22px; height: 22px; }
 }
 
-/* ----- Sticky mobile reservation bar ----- */
+/* ----- Sticky mobile reservation bar — hidden until past hero ----- */
 .mobile-cta-bar {
   position: fixed;
   bottom: 0; left: 0; right: 0;
   z-index: 89;
   display: none;
-  background: rgba(15,15,15,0.96);
+  background: rgba(13,13,13,0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(212,175,55,0.2);
+  border-top: 1px solid rgba(212,161,74,0.2);
   padding: 0.6rem;
   gap: 0.5rem;
+  transform: translateY(100%);
+  transition: transform .5s ease;
 }
+.mobile-cta-bar.in { transform: translateY(0); }
 .mobile-cta-bar a {
   flex: 1;
   text-align: center;

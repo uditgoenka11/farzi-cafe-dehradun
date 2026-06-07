@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact &amp; Reservations | Farzi Café Dehradun, 222, Dhakpatti</title>
-<meta name="description" content="Reserve a table, get directions or reach the events team at Farzi Café Dehradun — 222, Dhakpatti, Rajpur Road. Open daily 12 PM to 11:30 PM." />
-<meta name="keywords" content="Farzi Cafe Dehradun contact, Farzi Cafe Dehradun reservation, Farzi Cafe Dhakpatti Rajpur Road, Farzi Cafe phone number, restaurant Rajpur Road" />
+<title>Reserve a Table | Farzi Café Dehradun — 222, Dhakpatti, Rajpur Road</title>
+<meta name="description" content="Reserve a table at Farzi Café Dehradun. WhatsApp +91 76177 71124, call us, or send a reservation request. Open daily 12 PM – 11:30 PM on Rajpur Road." />
+<meta name="keywords" content="Farzi Cafe Dehradun reservation, Farzi Cafe Dehradun contact, Farzi Cafe Dhakpatti, Farzi Cafe phone, restaurant booking Rajpur Road" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://uditgoenka11.github.io/farzi-cafe-dehradun/contact.html" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Contact &amp; Reservations | Farzi Café Dehradun" />
+<meta property="og:title" content="Reserve at Farzi Café Dehradun" />
 <meta property="og:description" content="Reserve a table or get directions to Farzi Café Dehradun." />
 <meta property="og:image" content="https://uditgoenka11.github.io/farzi-cafe-dehradun/images/hero/terrace-signage-dusk.jpg" />
 <meta property="og:url" content="https://uditgoenka11.github.io/farzi-cafe-dehradun/contact.html" />
@@ -18,8 +18,175 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" />
 <link rel="stylesheet" href="css/style.css" />
+
+<style>
+  /* Page-specific editorial contact styles */
+  .reserve-section {
+    position: relative;
+    padding: clamp(7rem, 14vw, 12rem) 0 clamp(5rem, 10vw, 8rem);
+    background: var(--color-bg);
+    overflow: hidden;
+  }
+  .reserve-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 38%, rgba(212,161,74,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .reserve-inner {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 var(--gutter);
+    z-index: 2;
+  }
+  .reserve-inner .roman { margin-bottom: 3rem; }
+  .reserve-inner h1 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(3.2rem, 8vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin: 0 0 2rem;
+    color: var(--color-text);
+  }
+  .reserve-inner h1 em {
+    font-style: italic;
+    color: var(--color-gold);
+  }
+  .reserve-sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    color: var(--color-text);
+    max-width: 540px;
+    margin: 0 auto 3.4rem;
+    line-height: 1.55;
+    opacity: 0.92;
+  }
+  .reserve-cta-card {
+    background: var(--color-bg-2);
+    border: 1px solid rgba(212,161,74,0.18);
+    padding: clamp(2.4rem, 4vw, 3.4rem);
+    border-radius: 2px;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  .reserve-cta-label {
+    font-family: var(--font-accent);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: var(--color-gold);
+    margin-bottom: 1.8rem;
+  }
+  .reserve-cta-row {
+    display: flex; gap: 0.8rem;
+    justify-content: center; flex-wrap: wrap;
+  }
+  .reserve-note {
+    margin-top: 2.4rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--color-text-dim);
+    line-height: 1.55;
+  }
+
+  /* Three-column info strip */
+  .info-strip {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    background: var(--color-bg-2);
+    border-top: 1px solid var(--color-line);
+    border-bottom: 1px solid var(--color-line);
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    text-align: center;
+  }
+  @media (max-width: 720px) { .info-grid { grid-template-columns: 1fr; gap: 2.2rem; } }
+  .info-col h4 {
+    font-family: var(--font-accent);
+    font-size: 0.7rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin: 0 0 1rem;
+  }
+  .info-col p {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.6;
+  }
+  .info-col a {
+    color: var(--color-text);
+    border-bottom: 1px solid rgba(212,161,74,0.3);
+    padding-bottom: 1px;
+  }
+  .info-col a:hover {
+    color: var(--color-gold);
+    border-bottom-color: var(--color-gold);
+  }
+
+  /* Optional form section */
+  .optional-form {
+    padding: clamp(5rem, 9vw, 7rem) 0;
+    background: var(--color-bg);
+  }
+  .optional-form-inner {
+    max-width: 640px; margin: 0 auto;
+    padding: 0 var(--gutter); text-align: center;
+  }
+  .optional-form .roman { margin-bottom: 1.4rem; }
+  .optional-form h2 {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1;
+    margin: 0 0 0.6rem; color: var(--color-text);
+  }
+  .optional-form h2 em { font-style: italic; color: var(--color-gold); }
+  .optional-form p.lead {
+    font-family: var(--font-display); font-style: italic;
+    font-size: 1.1rem; color: var(--color-text-dim);
+    margin: 0 0 2.6rem;
+  }
+  .optional-form form.reservation { text-align: left; }
+
+  /* Map */
+  .contact-map {
+    padding: clamp(4rem, 7vw, 6rem) 0;
+    background: var(--color-bg);
+  }
+  .contact-map-inner {
+    max-width: var(--max-w); margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  .contact-map h3 {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    margin: 0 0 1.8rem; color: var(--color-text);
+  }
+  .contact-map h3 em { font-style: italic; color: var(--color-gold); }
+  .contact-map .map-embed {
+    aspect-ratio: 16/9;
+    border: 1px solid var(--color-line);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .contact-map iframe {
+    width: 100%; height: 100%; border: 0;
+    filter: invert(0.92) hue-rotate(180deg) saturate(0.55);
+  }
+</style>
 
 <script type="application/ld+json">
 {
@@ -30,7 +197,6 @@
     "@type": "Restaurant",
     "name": "Farzi Café Dehradun",
     "telephone": "+91-76177-71124",
-    "email": "reservations@farzicafedehradun.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "222, Dhakpatti, Rajpur Road",
@@ -67,141 +233,115 @@
   </div>
 </header>
 
-<section class="page-header">
-  <div class="container">
-    <span class="eyebrow">Reservations &amp; Directions</span>
-    <h1><em>Find Us</em></h1>
-    <p style="max-width:600px;margin:1.2rem auto 0;">222, Dhakpatti, Rajpur Road. Open daily from noon.</p>
-  </div>
-</section>
-
-<section style="padding-top:4rem;">
-  <div class="container">
-    <div class="contact-grid">
-
-      <!-- Left: details -->
-      <div class="reveal">
-        <div class="info-block">
-          <h3>Address</h3>
-          <p>222, Dhakpatti<br/>Rajpur Road<br/>Dehradun<br/>Uttarakhand, India</p>
-          <a href="https://maps.app.goo.gl/6Ymuwk7bfogPwDnz5" target="_blank" rel="noopener" class="btn" style="margin-top:1rem;">Get Directions</a>
-        </div>
-
-        <div class="info-block">
-          <h3>Hours</h3>
-          <p>Monday – Thursday · 12:00 PM – 11:30 PM<br/>Friday – Saturday · 12:00 PM – 12:30 AM<br/>Sunday · 12:00 PM – 11:30 PM</p>
-        </div>
-
-        <div class="info-block">
-          <h3>Reservations</h3>
-          <p><a href="tel:+917617771124">+91 76177 71124</a><br/>
-          <a href="mailto:reservations@farzicafedehradun.com">reservations@farzicafedehradun.com</a></p>
-        </div>
-
-        <div class="info-block">
-          <h3>Private Events</h3>
-          <p><a href="mailto:events@farzicafedehradun.com">events@farzicafedehradun.com</a></p>
-        </div>
-
-        <div class="info-block">
-          <h3>Press &amp; Collaborations</h3>
-          <p><a href="mailto:press@farzicafedehradun.com">press@farzicafedehradun.com</a></p>
-        </div>
-
-        <div class="info-block">
-          <h3>Follow</h3>
-          <div class="social-links">
-            <a href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C8.74 0 8.33 0 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38S.94 3.35.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.66.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.66 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C20.66.94 19.86.53 19.07.22 18.31-.08 17.43.13 16.16.07 14.88.01 14.47 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4z"/></svg>
-            </a>
-            <a href="https://www.facebook.com/farzicafedehradun" target="_blank" rel="noopener" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M22.68 0H1.32C.59 0 0 .59 0 1.32v21.36C0 23.41.59 24 1.32 24h11.5v-9.28h-3.13v-3.63h3.13V8.41c0-3.1 1.89-4.79 4.66-4.79 1.32 0 2.46.1 2.79.14v3.24h-1.91c-1.5 0-1.79.71-1.79 1.76v2.31h3.58l-.47 3.63h-3.11V24h6.1c.73 0 1.32-.59 1.32-1.32V1.32C24 .59 23.41 0 22.68 0z"/></svg>
-            </a>
-            <a href="https://www.zomato.com/dehradun/farzi-caf%C3%A9-rooftop-dining-bar-rajpur" target="_blank" rel="noopener" aria-label="Zomato">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><circle cx="12" cy="12" r="10"/><text x="12" y="16" font-family="serif" font-size="11" text-anchor="middle" fill="#0d0d0d" font-weight="bold">Z</text></svg>
-            </a>
-          </div>
-        </div>
+<!-- ====== Editorial reserve / contact hero ====== -->
+<section class="reserve-section" id="reserve">
+  <div class="reserve-inner reveal">
+    <div class="roman">I · Get in Touch</div>
+    <h1>Let's <em>talk</em>.</h1>
+    <p class="reserve-sub">Reserve a table, plan a celebration, or just tell us when you'd like to drop by. We reply on WhatsApp within the hour during business hours.</p>
+    <div class="reserve-cta-card">
+      <div class="reserve-cta-label">Reserve · Enquire · Visit</div>
+      <div class="reserve-cta-row">
+        <a href="https://wa.me/917617771124?text=Hi%21%20I%27d%20like%20to%20book%20a%20table%20at%20Farzi%20Caf%C3%A9%20Dehradun." class="btn-whatsapp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+          WhatsApp
+        </a>
+        <a href="tel:+917617771124" class="btn">Call Now</a>
       </div>
-
-      <!-- Right: form -->
-      <div class="reveal" id="reserve">
-        <h2>Reserve a Table</h2>
-        <p>Tell us when, how many and what's the occasion. We'll confirm your booking within an hour during business hours.</p>
-
-        <form class="reservation" novalidate>
-          <div>
-            <label for="name">Your Name</label>
-            <input id="name" name="name" type="text" required autocomplete="name" />
-          </div>
-          <div class="form-row">
-            <div>
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" required autocomplete="tel" />
-            </div>
-            <div>
-              <label for="guests">Guests</label>
-              <select id="guests" name="guests" required>
-                <option value="">Select</option>
-                <option>1</option><option>2</option><option>3</option><option>4</option>
-                <option>5</option><option>6</option><option>7</option><option>8</option>
-                <option>9+ (we'll arrange)</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row">
-            <div>
-              <label for="date">Date</label>
-              <input id="date" name="date" type="date" required />
-            </div>
-            <div>
-              <label for="time">Time</label>
-              <input id="time" name="time" type="time" required />
-            </div>
-          </div>
-          <div>
-            <label for="notes">Occasion / Notes</label>
-            <textarea id="notes" name="notes" placeholder="Anniversary? Allergies? Cabana preference? Tell us."></textarea>
-          </div>
-          <div>
-            <label>Send via</label>
-            <div style="display:flex;gap:0.8rem;">
-              <label style="display:flex;align-items:center;gap:0.4rem;font-family:var(--font-body);font-size:0.86rem;letter-spacing:normal;text-transform:none;color:var(--color-text);cursor:pointer;">
-                <input type="radio" name="channel" value="whatsapp" checked /> WhatsApp <span style="color:var(--color-muted);">(faster)</span>
-              </label>
-              <label style="display:flex;align-items:center;gap:0.4rem;font-family:var(--font-body);font-size:0.86rem;letter-spacing:normal;text-transform:none;color:var(--color-text);cursor:pointer;">
-                <input type="radio" name="channel" value="email" /> Email
-              </label>
-            </div>
-          </div>
-          <div>
-            <button type="submit" class="btn-whatsapp" style="width:100%;justify-content:center;">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
-              Send Reservation Request
-            </button>
-          </div>
-        </form>
-        <p style="font-size:0.85rem;color:var(--color-muted);margin-top:1rem;">By submitting you agree to be contacted regarding your booking. For tables of 10+ guests please call <a href="tel:+917617771124">+91 76177 71124</a> directly.</p>
-      </div>
+      <div class="reserve-note">Daily · 12:00 PM – 11:30 PM. Late nights Friday &amp; Saturday until 12:30 AM.</div>
     </div>
   </div>
 </section>
 
-<!-- Map -->
-<section id="map" style="padding-top:2rem;">
-  <div class="container">
-    <div class="section-head left reveal" style="text-align:left;">
-      <span class="eyebrow">On The Map</span>
-      <h2>222, Dhakpatti</h2>
+<!-- ====== Info strip ====== -->
+<section class="info-strip">
+  <div class="info-grid">
+    <div class="info-col reveal">
+      <h4>Visit</h4>
+      <p>222, Dhakpatti<br/>Rajpur Road<br/>Dehradun, Uttarakhand</p>
     </div>
-    <div class="map-embed reveal">
+    <div class="info-col reveal">
+      <h4>Reach Us</h4>
+      <p><a href="tel:+917617771124">+91 76177 71124</a><br/><a href="https://wa.me/917617771124" target="_blank" rel="noopener">WhatsApp Us</a></p>
+    </div>
+    <div class="info-col reveal">
+      <h4>Follow</h4>
+      <p><a href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener">@farzicafedehradun</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Optional structured form ====== -->
+<section class="optional-form">
+  <div class="optional-form-inner">
+    <div class="roman">II · Prefer a Form?</div>
+    <h2>Send a <em>structured</em> request.</h2>
+    <p class="lead">Fill the details and we'll open a pre-filled WhatsApp chat with our team — or send it by email if you'd rather.</p>
+
+    <form class="reservation" novalidate>
+      <div>
+        <label for="name">Your Name</label>
+        <input id="name" name="name" type="text" required autocomplete="name" />
+      </div>
+      <div class="form-row">
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" required autocomplete="tel" />
+        </div>
+        <div>
+          <label for="guests">Guests</label>
+          <select id="guests" name="guests" required>
+            <option value="">Select</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+            <option>9+ (we'll arrange)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label for="date">Date</label>
+          <input id="date" name="date" type="date" required />
+        </div>
+        <div>
+          <label for="time">Time</label>
+          <input id="time" name="time" type="time" required />
+        </div>
+      </div>
+      <div>
+        <label for="notes">Occasion / Notes</label>
+        <textarea id="notes" name="notes" placeholder="Anniversary? Allergies? Cabana preference? Tell us."></textarea>
+      </div>
+      <div>
+        <label style="margin-bottom:0.6rem;">Send via</label>
+        <div style="display:flex;gap:1.2rem;justify-content:center;">
+          <label style="display:flex;align-items:center;gap:0.4rem;font-family:var(--font-body);font-size:0.86rem;letter-spacing:normal;text-transform:none;color:var(--color-text);cursor:pointer;">
+            <input type="radio" name="channel" value="whatsapp" checked /> WhatsApp
+          </label>
+          <label style="display:flex;align-items:center;gap:0.4rem;font-family:var(--font-body);font-size:0.86rem;letter-spacing:normal;text-transform:none;color:var(--color-text);cursor:pointer;">
+            <input type="radio" name="channel" value="email" /> Email
+          </label>
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-solid" style="width:100%;">Send Reservation Request</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ====== Map ====== -->
+<section class="contact-map">
+  <div class="contact-map-inner reveal">
+    <h3>Find <em>us</em>.</h3>
+    <div class="map-embed">
       <iframe
         src="https://www.google.com/maps?q=Farzi+Cafe+Rooftop+Dining+Bar+Rajpur+Road+Dehradun&output=embed"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         title="Farzi Café Dehradun on Google Maps"></iframe>
     </div>
-    <p style="margin-top:1rem;color:var(--color-text-dim);font-size:0.92rem;">📍 Free valet parking · Lift to the rooftop · Wheelchair accessible · Pets welcome on the open terrace.</p>
+    <p style="margin-top:1.2rem;color:var(--color-text-dim);font-size:0.92rem;text-align:center;">Free valet parking · Lift to the rooftop · Wheelchair accessible · Pets welcome on the open terrace.</p>
   </div>
 </section>
 
@@ -213,54 +353,31 @@
           <span>Farzi<span class="gold">·</span>Café</span>
           <span class="brand-sub">Dehradun · Modern Indian Bistro</span>
         </div>
-        <p>India's most awarded modern Indian bistro, now in the foothills of the Himalayas.</p>
+        <p>Modern Indian cuisine, crafted cocktails and rooftop views on Rajpur Road, Dehradun.</p>
       </div>
-      <div class="footer-col">
-        <h4>Visit</h4>
-        <p>222, Dhakpatti<br/>Rajpur Road<br/>Dehradun</p>
-      </div>
-      <div class="footer-col">
-        <h4>Reach Us</h4>
-        <p><a href="tel:+917617771124">+91 76177 71124</a></p>
-        <p><a href="mailto:reservations@farzicafedehradun.com">reservations@farzicafedehradun.com</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+      <div class="footer-col"><h4>Visit</h4><p>222, Dhakpatti<br/>Rajpur Road<br/>Dehradun, Uttarakhand</p></div>
+      <div class="footer-col"><h4>Reach Us</h4><p><a href="tel:+917617771124">+91 76177 71124</a></p><p><a href="https://wa.me/917617771124" target="_blank" rel="noopener">WhatsApp Us</a></p></div>
+      <div class="footer-col"><h4>Explore</h4><ul>
+        <li><a href="menu.html">Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+      </ul></div>
     </div>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> Farzi Café Dehradun · A Massive Restaurants Concept</span>
-      <span>Crafted in the Himalayan foothills.</span>
+      <span>Crafted on Rajpur Road.</span>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
-<!-- Floating WhatsApp FAB -->
 <a class="fab-whatsapp" href="https://wa.me/917617771124?text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.307 1.265.489 1.697.626.713.226 1.362.194 1.875.118.572-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
 </a>
-
-<!-- Sticky mobile reservation bar -->
 <div class="mobile-cta-bar" aria-label="Quick actions">
-  <a href="tel:+917617771124" class="solid">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
-    Call
-  </a>
-  <a href="https://wa.me/917617771124?text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21" target="_blank" rel="noopener" class="wa">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
-    WhatsApp
-  </a>
-  <a href="contact.html#reserve">Reserve</a>
+  <a href="tel:+917617771124" class="solid">Call</a>
+  <a href="https://wa.me/917617771124" target="_blank" rel="noopener" class="wa">WhatsApp</a>
+  <a href="#reserve">Reserve</a>
 </div>
 
+<script src="js/main.js" defer></script>
 </body>
 </html>

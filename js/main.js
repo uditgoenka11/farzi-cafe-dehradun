@@ -176,16 +176,16 @@
     });
   }
 
-  // ---------- Hero rotating gallery ----------
-  const slides = document.querySelectorAll('.hero-slide');
-  if (slides.length > 1) {
-    let idx = 0;
-    setInterval(() => {
-      slides[idx].classList.remove('active');
-      idx = (idx + 1) % slides.length;
-      slides[idx].classList.add('active');
-    }, 6000);
+  // ---------- FAB + sticky bar: reveal after past-hero scroll ----------
+  const fab = document.querySelector('.fab-whatsapp');
+  const bar = document.querySelector('.mobile-cta-bar');
+  function onScrollReveal() {
+    const past = window.scrollY > Math.max(120, window.innerHeight * 0.55);
+    if (fab) fab.classList.toggle('in', past);
+    if (bar) bar.classList.toggle('in', past);
   }
+  window.addEventListener('scroll', onScrollReveal, { passive: true });
+  onScrollReveal();
 
   // ---------- Expose WA helper for inline use ----------
   window.farziWa = function (text) {
