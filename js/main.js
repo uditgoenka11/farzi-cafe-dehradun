@@ -119,28 +119,76 @@
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ---------- Reservation form (no backend; opens mailto draft) ----------
+  // ---------- Reservation form → WhatsApp (preferred) with mailto fallback ----------
+  const WA_NUMBER = '917617771124';
+  const BUSINESS_EMAIL = 'reservations@farzicafedehradun.com';
+
+  function buildWaUrl(text) {
+    return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
+  }
+
   const form = document.querySelector('form.reservation');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const data = new FormData(form);
-      const name = data.get('name') || '';
-      const phone = data.get('phone') || '';
-      const guests = data.get('guests') || '';
-      const date = data.get('date') || '';
-      const time = data.get('time') || '';
-      const notes = data.get('notes') || '';
-      const subject = encodeURIComponent('Reservation Request — ' + name);
-      const body = encodeURIComponent(
+      const name = (data.get('name') || '').toString().trim();
+      const phone = (data.get('phone') || '').toString().trim();
+      const guests = (data.get('guests') || '').toString().trim();
+      const date = (data.get('date') || '').toString().trim();
+      const time = (data.get('time') || '').toString().trim();
+      const notes = (data.get('notes') || '').toString().trim();
+      const channel = data.get('channel') || 'whatsapp';
+
+      const msg =
+        'Hi Farzi Café Dehradun! I would like to book a table.\n\n' +
         'Name: ' + name + '\n' +
         'Phone: ' + phone + '\n' +
         'Guests: ' + guests + '\n' +
         'Date: ' + date + '\n' +
-        'Time: ' + time + '\n\n' +
-        'Notes: ' + notes
-      );
-      window.location.href = 'mailto:reservations.dehradun@farzicafe.com?subject=' + subject + '&body=' + body;
+        'Time: ' + time +
+        (notes ? '\nOccasion / Notes: ' + notes : '');
+
+      if (channel === 'email') {
+        const subject = encodeURIComponent('Reservation Request — ' + (name || 'Guest'));
+        window.location.href = 'mailto:' + BUSINESS_EMAIL + '?subject=' + subject + '&body=' + encodeURIComponent(msg);
+      } else {
+        window.open(buildWaUrl(msg), '_blank');
+      }
     });
   }
+
+  // ---------- Event enquiry form → WhatsApp ----------
+  const eventForm = document.querySelector('form.event-enquiry');
+  if (eventForm) {
+    eventForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const d = new FormData(eventForm);
+      const msg =
+        'Hi Farzi Café Dehradun! I would like to host an event with you.\n\n' +
+        'Name: ' + (d.get('name') || '') + '\n' +
+        'Phone: ' + (d.get('phone') || '') + '\n' +
+        'Occasion: ' + (d.get('occasion') || '') + '\n' +
+        'Guests: ' + (d.get('guests') || '') + '\n' +
+        'Date: ' + (d.get('date') || '') + '\n' +
+        'Notes: ' + (d.get('notes') || '');
+      window.open(buildWaUrl(msg), '_blank');
+    });
+  }
+
+  // ---------- Hero rotating gallery ----------
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length > 1) {
+    let idx = 0;
+    setInterval(() => {
+      slides[idx].classList.remove('active');
+      idx = (idx + 1) % slides.length;
+      slides[idx].classList.add('active');
+    }, 6000);
+  }
+
+  // ---------- Expose WA helper for inline use ----------
+  window.farziWa = function (text) {
+    window.open(buildWaUrl(text || 'Hi Farzi Café Dehradun!'), '_blank');
+  };
 })();

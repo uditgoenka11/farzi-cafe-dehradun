@@ -3,77 +3,41 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://farzicafe-dehradun.com/</loc>
+    <loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://farzicafe-dehradun.com/images/hero/sunset-rooftop-mountains.jpg</image:loc>
+      <image:loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/images/hero/sunset-rooftop-mountains.jpg</image:loc>
       <image:title>Farzi Café Dehradun rooftop at sunset</image:title>
     </image:image>
   </url>
 
-  <url>
-    <loc>https://farzicafe-dehradun.com/menu.html</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Core pages -->
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/menu.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/gallery.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/events.html</loc><lastmod>2026-06-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/about.html</loc><lastmod>2026-06-07</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/contact.html</loc><lastmod>2026-06-07</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/blog.html</loc><lastmod>2026-06-07</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 
-  <url>
-    <loc>https://farzicafe-dehradun.com/gallery.html</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Local SEO landing pages -->
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/best-cafe-in-dehradun.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/best-restaurant-in-dehradun.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/rooftop-cafe-dehradun.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/fine-dining-dehradun.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/party-place-dehradun.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/birthday-celebration-dehradun.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
-  <url>
-    <loc>https://farzicafe-dehradun.com/events.html</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://farzicafe-dehradun.com/about.html</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://farzicafe-dehradun.com/contact.html</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://farzicafe-dehradun.com/blog.html</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://farzicafe-dehradun.com/blog/dal-chawal-arancini-story.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://farzicafe-dehradun.com/blog/dehradun-food-guide.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://farzicafe-dehradun.com/blog/curry-leaf-gimlet-recipe.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Blog posts -->
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/blog/best-cafe-in-dehradun.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/blog/best-restaurants-in-dehradun.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/blog/rooftop-dining-dehradun.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/blog/best-birthday-places-dehradun.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/blog/best-cocktail-bars-in-dehradun.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/blog/things-to-do-rajpur-road.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/blog/dal-chawal-arancini-story.html</loc><lastmod>2026-05-15</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/blog/dehradun-food-guide.html</loc><lastmod>2026-05-22</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://uditgoenka11.github.io/farzi-cafe-dehradun/blog/curry-leaf-gimlet-recipe.html</loc><lastmod>2026-06-01</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 
 </urlset>
