@@ -190,7 +190,7 @@ p { margin: 0 0 1.2em; color: var(--color-text); }
 .brand {
   font-family: var(--font-accent);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   letter-spacing: 0.18em;
   color: var(--color-text);
   text-transform: uppercase;
@@ -730,7 +730,7 @@ section { padding: clamp(4rem, 10vw, 8rem) 0; }
   top: 0.4rem; left: 1rem;
   opacity: 0.5;
 }
-.review p { font-style: italic; }
+.review p { font-style: normal; font-family: var(--font-display); font-size: 1.02rem; line-height: 1.55; }
 .review-author { color: var(--color-gold); font-family: var(--font-accent); letter-spacing: 0.14em; font-size: 0.78rem; text-transform: uppercase; }
 .stars { color: var(--color-gold); letter-spacing: 0.2em; margin-bottom: 0.6rem; font-size: 0.9rem; }
 
@@ -877,16 +877,17 @@ form.reservation textarea { resize: vertical; min-height: 120px; }
 }
 .page-header h1 {
   margin: 0;
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(2rem, 5vw, 3.8rem);
   font-weight: 400;
   line-height: 1.05;
 }
 .page-header p {
   font-family: var(--font-display);
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(1rem, 1.3vw, 1.15rem);
   color: var(--color-text-dim);
+  line-height: 1.55;
 }
 
 /* ----- Article (blog post) ----- */
@@ -989,14 +990,14 @@ article.post .post-meta {
 .pull-quote .roman { margin-bottom: 3rem; }
 .pull-quote blockquote {
   font-family: var(--font-display);
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
-  font-size: clamp(1.25rem, 2.6vw, 2rem);
-  line-height: 1.35;
+  font-size: clamp(1.35rem, 2.8vw, 2.2rem);
+  line-height: 1.4;
   color: var(--color-text);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
   margin: 0;
-  font-variation-settings: "opsz" 144, "SOFT" 40;
+  font-variation-settings: "opsz" 96, "SOFT" 30;
 }
 .pull-quote blockquote em { font-style: italic; color: var(--color-gold); }
 .pull-quote cite {
@@ -1041,7 +1042,7 @@ article.post .post-meta {
 .highlights-header h2 em { font-style: italic; color: var(--color-gold); }
 .highlights-header p {
   font-family: var(--font-display);
-  font-style: italic;
+  font-style: normal;
   font-size: 1.02rem;
   color: var(--color-text-dim);
   max-width: 460px; margin: 0 auto;
@@ -1092,7 +1093,7 @@ article.post .post-meta {
 }
 .highlight-card h3 {
   font-family: var(--font-display);
-  font-style: italic;
+  font-style: normal;
   font-weight: 500;
   font-size: 1.15rem;
   line-height: 1.3;
