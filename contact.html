@@ -87,8 +87,11 @@
     margin-bottom: 1.8rem;
   }
   .reserve-cta-row {
-    display: flex; gap: 0.8rem;
-    justify-content: center; flex-wrap: wrap;
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
   }
   .reserve-note {
     margin-top: 2.4rem;
@@ -115,7 +118,7 @@
     padding: 0 var(--gutter);
     text-align: center;
   }
-  @media (max-width: 720px) { .info-grid { grid-template-columns: 1fr; gap: 2.2rem; } }
+  @media (max-width: 768px) { .info-grid { grid-template-columns: 1fr; gap: 2.2rem; } }
   .info-col h4 {
     font-family: var(--font-accent);
     font-size: 0.7rem;

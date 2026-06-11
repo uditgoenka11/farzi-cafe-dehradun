@@ -187,12 +187,28 @@
   window.addEventListener('scroll', onScrollReveal, { passive: true });
   onScrollReveal();
 
+  // ---------- Reduced-motion preference ----------
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // ---------- Preloader dismiss ----------
   const preloader = document.querySelector('.preloader');
   if (preloader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => preloader.classList.add('done'), 900);
-    });
+    let preloaderSeen = false;
+    try {
+      preloaderSeen = !!sessionStorage.getItem('farzi-preloader-seen');
+    } catch (_) { /* private browsing */ }
+
+    if (preloaderSeen || prefersReducedMotion) {
+      // Skip the preloader entirely — CSS handles display:none via .skip
+      preloader.classList.add('skip');
+    } else {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          preloader.classList.add('done');
+          try { sessionStorage.setItem('farzi-preloader-seen', '1'); } catch (_) { /* private browsing */ }
+        }, 900);
+      });
+    }
   }
 
   // ---------- Hero parallax on scroll ----------
@@ -249,10 +265,26 @@
       ) return;
       if (!href.endsWith('.html') && href !== '/') return;
       a.addEventListener('click', (e) => {
+        // Bug fix 2: let modifier-clicks open new tabs / trigger browser defaults
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         e.preventDefault();
+        // Bug fix 4: skip curtain animation when user prefers reduced motion
+        if (prefersReducedMotion) {
+          window.location.href = href;
+          return;
+        }
         curtain.classList.add('up');
         setTimeout(() => { window.location.href = href; }, 500);
       });
+    });
+
+    // Bug fix 1: clear the curtain when page is restored from bfcache
+    window.addEventListener('pageshow', (e) => {
+      if (e.persisted) {
+        curtain.classList.remove('up');
+        // Also ensure preloader stays hidden on bfcache restores
+        if (preloader) preloader.classList.add('skip');
+      }
     });
   }
 

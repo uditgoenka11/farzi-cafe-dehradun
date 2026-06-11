@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Page Not Found | Farzi Café Dehradun</title>
+
+<link rel="icon" type="image/svg+xml" href="/farzi-cafe-dehradun/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" />
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:      #0C0A08;
+    --text:    #E8DCC4;
+    --gold:    #C9A961;
+    --dim:     rgba(232,220,196,0.55);
+    --line:    rgba(201,169,97,0.18);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body:    'DM Sans', system-ui, sans-serif;
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Subtle film-grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.45;
+  }
+
+  /* Warm radial glow behind the 404 */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 60vw;
+    max-width: 700px;
+    max-height: 700px;
+    background: radial-gradient(ellipse, rgba(201,169,97,0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .eyebrow {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.6rem;
+  }
+
+  .num {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(7rem, 22vw, 14rem);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    /* hollow treatment */
+    -webkit-text-stroke: 1px rgba(201,169,97,0.45);
+    color: transparent;
+    position: relative;
+  }
+  /* solid fill on the "4"s for visual tension */
+  .num .solid {
+    color: var(--text);
+    -webkit-text-stroke: 0;
+  }
+
+  .tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    color: var(--text);
+    margin: 1.8rem 0 0.9rem;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    max-width: 520px;
+    line-height: 1.35;
+  }
+
+  .sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--dim);
+    max-width: 400px;
+    line-height: 1.6;
+    margin-bottom: 2.8rem;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+    margin: 0 auto 2.8rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 3rem;
+  }
+
+  .nav-links a {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-links a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  .btn-solid {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--gold);
+    text-decoration: none;
+    padding: 0.85rem 2.2rem;
+    border: 1px solid var(--gold);
+    border-radius: 1px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-solid:hover {
+    background: transparent;
+    color: var(--gold);
+  }
+
+  .brand {
+    margin-top: 3.5rem;
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    font-weight: 300;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--dim);
+    font-variation-settings: "opsz" 72;
+    text-decoration: none;
+  }
+  .brand .dot { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="page">
+  <span class="eyebrow">Farzi Café Dehradun</span>
+
+  <div class="num" aria-label="404"><span class="solid">4</span>0<span class="solid">4</span></div>
+
+  <p class="tagline">The page you&#8217;re looking for pulled a Farzi on you.</p>
+  <p class="sub">It slipped away like smoke under a cloche. Let&#8217;s get you somewhere real.</p>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <ul class="nav-links" aria-label="Helpful links">
+    <li><a href="https://uditgoenka11.github.io/farzi-cafe-dehradun/">Home</a></li>
+    <li><a href="https://uditgoenka11.github.io/farzi-cafe-dehradun/menu.html">Menu</a></li>
+    <li><a href="https://uditgoenka11.github.io/farzi-cafe-dehradun/contact.html">Reserve a Table</a></li>
+  </ul>
+
+  <a href="https://uditgoenka11.github.io/farzi-cafe-dehradun/contact.html#reserve" class="btn-solid">Reserve a Table</a>
+
+  <a href="https://uditgoenka11.github.io/farzi-cafe-dehradun/" class="brand">Farzi<span class="dot">&#183;</span>Caf&#233; &nbsp;Dehradun</a>
+</div>
+</body>
+</html>
