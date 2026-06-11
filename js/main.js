@@ -124,7 +124,9 @@
   const BUSINESS_EMAIL = 'reservations@farzicafedehradun.com';
 
   function buildWaUrl(text) {
-    return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
+    return 'https://api.whatsapp.com/send/?phone=' + WA_NUMBER +
+           '&text=' + encodeURIComponent(text) +
+           '&type=phone_number&app_absent=0';
   }
 
   const form = document.querySelector('form.reservation');
