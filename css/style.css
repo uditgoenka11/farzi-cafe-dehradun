@@ -429,6 +429,40 @@ p { margin: 0 0 1.2em; color: var(--color-text-dim); }
   color: var(--color-gold);
   font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
 }
+
+/* Three-line tagline — restrained, lets the video breathe */
+.hero h1.hero-tagline {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2.1vw, 1.7rem);
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+  color: var(--color-text);
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05em;
+  margin: 0 0 2rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.55);
+  opacity: 0;
+  animation: fadeUp 1.6s var(--ease) 0.55s forwards;
+  font-variation-settings: "opsz" 36, "SOFT" 40;
+}
+.hero h1.hero-tagline span {
+  display: block;
+}
+/* Subtle staggered fade-in per line (no extra JS) */
+.hero h1.hero-tagline span:nth-child(1) { animation: fadeUp 1.4s var(--ease) 0.55s both; }
+.hero h1.hero-tagline span:nth-child(2) { animation: fadeUp 1.4s var(--ease) 0.75s both; }
+.hero h1.hero-tagline span:nth-child(3) { animation: fadeUp 1.4s var(--ease) 0.95s both; }
+
+/* Lead becomes a quiet italic location line under the tagline */
+.hero h1.hero-tagline + .hero-bottom-row .lead {
+  font-style: italic;
+  font-size: clamp(0.88rem, 1.05vw, 1.02rem);
+  opacity: 0.85;
+  max-width: 360px;
+}
 /* Bottom row with top divider (Hillcrest grid) */
 .hero-bottom-row {
   display: grid;
