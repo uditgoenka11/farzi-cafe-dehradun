@@ -199,8 +199,8 @@ p { margin: 0 0 1.2em; color: var(--color-text); }
 .brand-sub {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.68rem;
-  letter-spacing: 0.3em;
+  font-size: 0.75rem;
+  letter-spacing: 0.34em;
   color: var(--color-muted);
   margin-top: 2px;
   font-weight: 400;
@@ -368,7 +368,7 @@ p { margin: 0 0 1.2em; color: var(--color-text); }
 /* Year mark — top-right */
 .hero-corner-mark {
   position: absolute;
-  top: 2rem; right: 2.2rem;
+  top: 7.5rem; right: 2.2rem;
   z-index: 2;
   text-align: right;
   display: none;
