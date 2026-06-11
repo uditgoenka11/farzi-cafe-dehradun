@@ -119,9 +119,8 @@
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ---------- Reservation form → WhatsApp (preferred) with mailto fallback ----------
+  // ---------- Reservation form → WhatsApp ----------
   const WA_NUMBER = '917617771124';
-  const BUSINESS_EMAIL = 'reservations@farzicafedehradun.com';
 
   function buildWaUrl(text) {
     return 'https://api.whatsapp.com/send/?phone=' + WA_NUMBER +
@@ -140,7 +139,6 @@
       const date = (data.get('date') || '').toString().trim();
       const time = (data.get('time') || '').toString().trim();
       const notes = (data.get('notes') || '').toString().trim();
-      const channel = data.get('channel') || 'whatsapp';
 
       const msg =
         'Hi Farzi Café Dehradun! I would like to book a table.\n\n' +
@@ -151,12 +149,7 @@
         'Time: ' + time +
         (notes ? '\nOccasion / Notes: ' + notes : '');
 
-      if (channel === 'email') {
-        const subject = encodeURIComponent('Reservation Request — ' + (name || 'Guest'));
-        window.location.href = 'mailto:' + BUSINESS_EMAIL + '?subject=' + subject + '&body=' + encodeURIComponent(msg);
-      } else {
-        window.open(buildWaUrl(msg), '_blank');
-      }
+      window.open(buildWaUrl(msg), '_blank');
     });
   }
 
