@@ -7,6 +7,7 @@ Modern Indian bistro and rooftop bar at 222, Dhakpatti, Rajpur Road, Dehradun �
 - Street: 222, Dhakpatti, Rajpur Road
 - City: Dehradun, Uttarakhand 248009, India
 - GPS: 30.3617, 78.0696
+- Building: Pacific Mall, Jakhan — parking available at Pacific Mall; free valet parking provided at the restaurant (contact.html page copy)
 
 ## Hours
 
@@ -20,7 +21,7 @@ Modern Indian bistro and rooftop bar at 222, Dhakpatti, Rajpur Road, Dehradun �
 
 ## Price Range
 
-₹₹₹
+₹₹₹ — Approximately ₹ 1,300 for two for a lighter meal; ₹ 1,500–2,000 for two with cocktails for a full dinner (EazyDiner listing; cross-referenced with JustDial and site pricing).
 
 ## Signature Dishes
 
@@ -42,12 +43,12 @@ Modern Indian bistro and rooftop bar at 222, Dhakpatti, Rajpur Road, Dehradun �
 
 ### Core
 
-- https://uditgoenka11.github.io/farzi-cafe-dehradun/ — Homepage; hero, brand introduction, menu highlights and visit info
-- https://uditgoenka11.github.io/farzi-cafe-dehradun/menu.html — Full menu: small plates, mains, pizza, Asian, desserts, cocktails, beverages
+- https://uditgoenka11.github.io/farzi-cafe-dehradun/ — Homepage; hero, brand introduction, menu highlights and visit info; FAQ (location/type/hours/reservations/rooftop/cost)
+- https://uditgoenka11.github.io/farzi-cafe-dehradun/menu.html — Full menu: small plates, mains, pizza, Asian, desserts, cocktails, beverages; FAQ (cost for two/signatures/vegetarian/alcohol/PDF/cuisines)
 - https://uditgoenka11.github.io/farzi-cafe-dehradun/about.html — Brand story, chef's philosophy, timeline from Cyber Hub (2014) to Dehradun (2026), awards
-- https://uditgoenka11.github.io/farzi-cafe-dehradun/contact.html — Reservations, WhatsApp, phone, address, embedded map
+- https://uditgoenka11.github.io/farzi-cafe-dehradun/contact.html — Reservations, WhatsApp, phone, address, embedded map, FAQ (directions/parking/hours/booking)
 - https://uditgoenka11.github.io/farzi-cafe-dehradun/gallery.html — Photo gallery of rooftop, bar, food and cabanas
-- https://uditgoenka11.github.io/farzi-cafe-dehradun/events.html — Private dining, birthdays, anniversaries, corporate and kitty party packages
+- https://uditgoenka11.github.io/farzi-cafe-dehradun/events.html — Private dining, birthdays, anniversaries, corporate and kitty party packages; FAQ (cabanas/booking/occasions/AV)
 - https://uditgoenka11.github.io/farzi-cafe-dehradun/blog.html — Blog index: stories from the rooftop kitchen
 
 ### Local SEO Landing Pages
