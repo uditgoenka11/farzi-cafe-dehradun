@@ -187,6 +187,75 @@
   window.addEventListener('scroll', onScrollReveal, { passive: true });
   onScrollReveal();
 
+  // ---------- Preloader dismiss ----------
+  const preloader = document.querySelector('.preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => preloader.classList.add('done'), 900);
+    });
+  }
+
+  // ---------- Hero parallax on scroll ----------
+  const heroEl = document.querySelector('.hero');
+  if (heroEl) {
+    let raf = false;
+    window.addEventListener('scroll', () => {
+      if (raf) return;
+      raf = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y < window.innerHeight) {
+          heroEl.style.setProperty('--parallax', (y * 0.35) + 'px');
+        }
+        raf = false;
+      });
+    }, { passive: true });
+  }
+
+  // ---------- Hero golden particles (CSS-only via inline) ----------
+  const particles = document.getElementById('heroParticles');
+  if (particles) {
+    const count = 14;
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('span');
+      p.className = 'hero-particle';
+      // Spread across viewport horizontally; vary delay + duration
+      p.style.left = (Math.random() * 100) + '%';
+      p.style.animationDuration = (12 + Math.random() * 10) + 's';
+      p.style.animationDelay = (Math.random() * 12) + 's';
+      const size = 2 + Math.random() * 2;
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      frag.appendChild(p);
+    }
+    particles.appendChild(frag);
+  }
+
+  // ---------- Page transition curtain on nav clicks ----------
+  const curtain = document.querySelector('.page-curtain');
+  if (curtain) {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+      // Only intercept internal HTML page nav (skip hash, mailto, tel, wa.me, external)
+      if (
+        href.startsWith('#') ||
+        href.startsWith('mailto:') ||
+        href.startsWith('tel:') ||
+        href.startsWith('http') ||
+        a.target === '_blank' ||
+        a.hasAttribute('download')
+      ) return;
+      if (!href.endsWith('.html') && href !== '/') return;
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        curtain.classList.add('up');
+        setTimeout(() => { window.location.href = href; }, 500);
+      });
+    });
+  }
+
   // ---------- Expose WA helper for inline use ----------
   window.farziWa = function (text) {
     window.open(buildWaUrl(text || 'Hi Farzi Café Dehradun!'), '_blank');

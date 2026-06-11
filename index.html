@@ -3,29 +3,26 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Farzi Café Dehradun | Modern Indian Bistro &amp; Rooftop Bar on Rajpur Road</title>
+<title>Farzi Café Dehradun — Modern Indian Bistro &amp; Rooftop Bar on Rajpur Road</title>
 <meta name="description" content="Farzi Café Dehradun — modern Indian cuisine, crafted cocktails and rooftop views over the Mussoorie hills. Reservations on +91 76177 71124." />
+<meta name="theme-color" content="#0C0A08" />
 <meta name="keywords" content="Farzi Cafe Dehradun, rooftop restaurant Dehradun, modern Indian Dehradun, Rajpur Road restaurant, fine dining Dehradun, cocktail bar Dehradun, party place Dehradun, best cafe in Dehradun" />
-<meta name="author" content="Farzi Café Dehradun" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://uditgoenka11.github.io/farzi-cafe-dehradun/" />
 
-<!-- Open Graph -->
 <meta property="og:type" content="restaurant" />
 <meta property="og:site_name" content="Farzi Café Dehradun" />
-<meta property="og:title" content="Farzi Café Dehradun | A Toast to Modern India" />
+<meta property="og:title" content="Farzi Café Dehradun — A Toast to Modern India" />
 <meta property="og:description" content="Modern Indian cuisine, crafted cocktails, rooftop views on Rajpur Road, Dehradun." />
 <meta property="og:image" content="https://uditgoenka11.github.io/farzi-cafe-dehradun/images/hero/sunset-rooftop-mountains.jpg" />
 <meta property="og:url" content="https://uditgoenka11.github.io/farzi-cafe-dehradun/" />
 <meta property="og:locale" content="en_IN" />
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Farzi Café Dehradun | A Toast to Modern India" />
+<meta name="twitter:title" content="Farzi Café Dehradun — A Toast to Modern India" />
 <meta name="twitter:description" content="Modern Indian. Crafted cocktails. Rooftop views on Rajpur Road, Dehradun." />
 <meta name="twitter:image" content="https://uditgoenka11.github.io/farzi-cafe-dehradun/images/hero/sunset-rooftop-mountains.jpg" />
 
-<!-- Geo / Locale -->
 <meta name="geo.region" content="IN-UT" />
 <meta name="geo.placename" content="Dehradun" />
 <meta name="geo.position" content="30.3617;78.0696" />
@@ -33,10 +30,11 @@
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="apple-touch-icon" href="favicon.svg" />
+<link rel="preload" as="image" href="images/hero/sunset-rooftop-mountains.jpg" fetchpriority="high" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" />
 
 <link rel="stylesheet" href="css/style.css" />
 
@@ -67,11 +65,7 @@
     "postalCode": "248009",
     "addressCountry": "IN"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 30.3617,
-    "longitude": 78.0696
-  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 30.3617, "longitude": 78.0696 },
   "openingHoursSpecification": [
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Sunday"],"opens":"12:00","closes":"23:30"},
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"12:00","closes":"00:30"}
@@ -88,6 +82,15 @@
 </script>
 </head>
 <body>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-monogram">F</div>
+  <div class="preloader-bar"></div>
+</div>
+
+<!-- Page transition curtain -->
+<div class="page-curtain" id="pageCurtain" aria-hidden="true"></div>
 
 <!-- =================== HEADER =================== -->
 <header class="site-header" id="siteHeader">
@@ -112,18 +115,20 @@
   </div>
 </header>
 
-<!-- =================== HERO — cinematic, editorial =================== -->
+<!-- =================== HERO — cinematic ====================== -->
 <section class="hero" id="hero">
   <div class="hero-media" aria-hidden="true">
     <video autoplay muted loop playsinline poster="images/hero/sunset-rooftop-mountains.jpg">
       <source src="videos/farzi-cafe-tour-1.mp4" type="video/mp4" />
     </video>
   </div>
+  <div class="hero-light" aria-hidden="true"></div>
+  <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
   <div class="hero-letterbox-top" aria-hidden="true"></div>
   <div class="hero-letterbox-bottom" aria-hidden="true"></div>
-  <div class="hero-side-mark" aria-hidden="true">Farzi · Dehradun · Rajpur Road</div>
+  <div class="hero-side-mark" aria-hidden="true">Farzi · Dehradun · Doon Valley</div>
   <div class="hero-corner-mark" aria-hidden="true">
-    <div class="roman" style="border:none;padding:0;margin:0;">MMXXVI</div>
+    <div class="roman" style="border:none;padding:0;margin:0;font-size:1rem;letter-spacing:0.5em;">MMXXVI</div>
     <div class="est-label">Est. · Modern Indian Bistro</div>
   </div>
 
@@ -131,7 +136,7 @@
     <span class="eyebrow">Rooftop · Rajpur Road · Dehradun</span>
     <h1>A toast to<br/><em>modern</em> India.</h1>
     <div class="hero-bottom-row">
-      <p class="lead">Heritage flavours, molecular wizardry, and the Mussoorie hills as your horizon.</p>
+      <p class="lead">Heritage flavours, molecular wizardry, and the Mussoorie hills as your quiet horizon.</p>
       <div class="hero-actions">
         <a href="contact.html#reserve" class="btn btn-solid">Reserve a Table</a>
         <a href="menu.html" class="btn">View Menu</a>
@@ -141,26 +146,36 @@
   <div class="scroll-cue">Scroll</div>
 </section>
 
-<!-- =================== I · INTRO =================== -->
-<section id="intro">
+<!-- =================== I · THE WELCOME — drop-cap intro =================== -->
+<section id="intro" style="padding: clamp(7rem, 12vw, 10rem) 0;">
   <div class="container">
-    <div class="section-head reveal">
+    <div class="section-head reveal" style="text-align:center;max-width:880px;margin:0 auto;">
       <span class="roman">I · The Welcome</span>
-      <h2>India, plated for the curious palate.</h2>
-      <p>The name "Farzi" means <em>illusion</em> — and that's what we serve. Familiar Indian classics, reborn through technique, smoke and sleight-of-hand. A rooftop above Rajpur Road, with the Mussoorie hills as our quiet backdrop.</p>
+      <h2 style="margin-bottom:2.4rem;">India, plated for <em>the curious palate.</em></h2>
+    </div>
+    <div class="prose reveal" style="max-width:680px;margin:0 auto;">
+      <p>The name "Farzi" means <em>illusion</em> — and that's exactly what we serve. Familiar Indian classics, reborn through technique, smoke and sleight-of-hand. A rooftop above Rajpur Road, with the Mussoorie hills as our quiet backdrop. Brass canopies, an onyx-lit bar, curtained cabanas, and a kitchen that knows how to wink at a recipe without losing its soul.</p>
     </div>
   </div>
 </section>
 
-<!-- =================== II · AMBIENCE SPLIT =================== -->
-<section id="ambience" style="background:var(--color-bg-2);">
+<!-- =================== PULL QUOTE =================== -->
+<section class="pull-quote">
+  <div class="pull-quote-inner reveal">
+    <div class="roman">A Note From Doon</div>
+    <blockquote>"The view is unreal, the dal-chawal arancini is the kind of dish I'll be thinking about for weeks, and the sundowner here might be the best half-hour of <em>any</em> evening in Dehradun."</blockquote>
+    <cite>Aanya M. · Google Reviews · 5 stars</cite>
+  </div>
+</section>
+
+<!-- =================== II · THE SETTING — split =================== -->
+<section id="ambience" style="padding: clamp(6rem, 12vw, 10rem) 0;">
   <div class="container">
     <div class="split">
       <div class="split-content reveal">
         <span class="roman">II · The Setting</span>
         <h2>A rooftop perched<br/>above the foothills.</h2>
-        <p>Brass canopies, an onyx-lit bar, curtained cabanas. Inside, hand-painted tiles and a glowing Farzi monogram. Outside, the line of hills runs all the way to Mussoorie.</p>
-        <p>Lunches by the glass wall. Sundowners at the bar. Dinners under string lights. Whichever Farzi you find — you'll want to come back.</p>
+        <p>Designer brass canopies, hand-painted tiles and a glowing Farzi monogram. Outside, the line of hills runs all the way to Mussoorie. Inside, evenings drift slowly — lunches by the glass wall, sundowners at the bar, dinners under string lights.</p>
         <a href="gallery.html" class="btn">View Gallery</a>
       </div>
       <div class="split-media reveal">
@@ -170,47 +185,41 @@
   </div>
 </section>
 
-<!-- =================== III · KITCHEN SPLIT =================== -->
-<section id="kitchen">
-  <div class="container">
-    <div class="split reverse">
-      <div class="split-content reveal">
-        <span class="roman">III · The Kitchen</span>
-        <h2>Familiar enough to recognise.<br/>Redesigned enough to surprise.</h2>
-        <p>Galouti on warm slate. Dal-chawal arancini. Awadhi biryani sealed under dough, broken open at the table. Mishti doi tres leches under a warm chocolate pour.</p>
-        <p>Modern Indian as we mean it — not fusion for its own sake, but classics tilted with care.</p>
-        <a href="menu.html" class="btn">See the Menu</a>
-      </div>
-      <div class="split-media reveal">
-        <img src="images/menu/food-kebab-pink-onion.jpg" alt="Signature lamb galouti at Farzi Café Dehradun" loading="lazy" />
-      </div>
-    </div>
+<!-- =================== III · THE EVENING — highlights grid =================== -->
+<section class="highlights-section" style="background:var(--color-bg-2);border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line);">
+  <div class="highlights-header reveal">
+    <div class="roman">III · The Evening</div>
+    <h2>Three rooms.<br/>One <em>quiet</em> rooftop.</h2>
+    <p>Whichever Farzi you find — bistro, bar, or cabana — you'll want to come back.</p>
+  </div>
+  <div class="highlights-grid">
+    <article class="highlight-card reveal">
+      <div class="highlight-img"><img src="images/menu/food-kebab-pink-onion.jpg" alt="The kitchen at Farzi Café Dehradun" loading="lazy" /></div>
+      <div class="highlight-meta">The Kitchen</div>
+      <h3>Familiar enough to recognise.<br/>Redesigned enough to <em>surprise.</em></h3>
+      <p>Galouti on warm slate. Dal-chawal arancini. Awadhi biryani sealed under dough, broken open at the table.</p>
+    </article>
+    <article class="highlight-card reveal">
+      <div class="highlight-img"><img src="images/hero/bar-cabanas-night.jpg" alt="The bar at Farzi Café Dehradun" loading="lazy" /></div>
+      <div class="highlight-meta">The Bar</div>
+      <h3>India's spice rack,<br/>in a <em>glass.</em></h3>
+      <p>Saffron sours. Curry-leaf gimlets. Smoked-jaggery old-fashioneds. A Mussoorie hill highball that smells like a forest.</p>
+    </article>
+    <article class="highlight-card reveal">
+      <div class="highlight-img"><img src="images/events/wine-candle-cabana.jpg" alt="Private cabanas at Farzi Café Dehradun" loading="lazy" /></div>
+      <div class="highlight-meta">The Cabanas</div>
+      <h3>Curtained, candlelit,<br/>made for the <em>occasion.</em></h3>
+      <p>Six private cabanas under brass canopies — for anniversaries, birthdays, surprise dinners, and slow conversations.</p>
+    </article>
   </div>
 </section>
 
-<!-- =================== IV · BAR SPLIT =================== -->
-<section id="bar" style="background:var(--color-bg-2);">
+<!-- =================== IV · IN THEIR WORDS — testimonials =================== -->
+<section id="reviews" style="padding: clamp(6rem, 12vw, 10rem) 0;">
   <div class="container">
-    <div class="split">
-      <div class="split-content reveal">
-        <span class="roman">IV · The Bar</span>
-        <h2>India's spice rack,<br/>in a glass.</h2>
-        <p>Saffron sours, curry-leaf gimlets, smoked-jaggery old-fashioneds, a Mussoorie hill highball that smells like a forest. India's most awarded cocktail programme, now in the foothills.</p>
-        <a href="menu.html#cocktails" class="btn">See Bar List</a>
-      </div>
-      <div class="split-media reveal">
-        <img src="images/hero/bar-cabanas-night.jpg" alt="Curtained cabanas and onyx bar at Farzi Café Dehradun" loading="lazy" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =================== V · IN THEIR WORDS =================== -->
-<section id="reviews">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="roman">V · In Their Words</span>
-      <h2>What Dehradun is saying.</h2>
+    <div class="section-head reveal" style="text-align:center;">
+      <span class="roman">IV · In Their Words</span>
+      <h2>What Dehradun is <em>saying.</em></h2>
     </div>
     <div class="reviews">
       <div class="review reveal">
@@ -232,33 +241,13 @@
   </div>
 </section>
 
-<!-- =================== VI · INSTAGRAM =================== -->
-<section id="instagram" style="background:var(--color-bg-2);">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="roman">VI · @farzicafedehradun</span>
-      <h2>Tag us in your evening.</h2>
-      <a href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener" class="btn" style="margin-top:0.6rem;">Follow on Instagram</a>
-    </div>
-
-    <div class="instagram-grid">
-      <a class="ig-tile" href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener"><img src="images/menu/dessert-chocolate-pour.jpg" alt="Farzi Café Instagram post" loading="lazy"/></a>
-      <a class="ig-tile" href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener"><img src="images/menu/cocktail-orange.jpg" alt="Farzi Café Instagram post" loading="lazy"/></a>
-      <a class="ig-tile" href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener"><img src="images/menu/food-kebab-pink-onion.jpg" alt="Farzi Café Instagram post" loading="lazy"/></a>
-      <a class="ig-tile" href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener"><img src="images/hero/sunset-rooftop-mountains.jpg" alt="Farzi Café Instagram post" loading="lazy"/></a>
-      <a class="ig-tile" href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener"><img src="images/gallery/02-cabanas-night.jpg" alt="Farzi Café Instagram post" loading="lazy"/></a>
-      <a class="ig-tile" href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener"><img src="images/gallery/08-bar-onyx-night.jpg" alt="Farzi Café Instagram post" loading="lazy"/></a>
-    </div>
-  </div>
-</section>
-
-<!-- =================== VII · VISIT =================== -->
-<section id="visit" style="background:url('images/hero/terrace-signage-dusk.jpg') center/cover; position:relative; padding: clamp(6rem, 12vw, 10rem) 0;">
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.85) 100%);"></div>
+<!-- =================== V · VISIT =================== -->
+<section id="visit" style="background:url('images/hero/terrace-signage-dusk.jpg') center/cover; position:relative; padding: clamp(7rem, 14vw, 11rem) 0;">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(12,10,8,0.55) 0%, rgba(12,10,8,0.92) 100%);"></div>
   <div class="container" style="position:relative;text-align:center;">
-    <span class="roman reveal">VII · Visit Us</span>
-    <h2 class="reveal" style="font-size:clamp(2.4rem, 6vw, 4.5rem); font-weight:300;">222, Dhakpatti<br/><em>Rajpur Road, Dehradun.</em></h2>
-    <p class="reveal" style="max-width:520px;margin:0 auto 2.6rem; font-family:var(--font-display); font-style:italic; font-size:1.15rem;">Open daily · 12:00 PM – 11:30 PM<br/>Late nights Friday &amp; Saturday until 12:30 AM.</p>
+    <span class="roman reveal">V · Visit Us</span>
+    <h2 class="reveal" style="font-size:clamp(2.8rem, 7vw, 5.5rem); margin-top:1.4rem;">222, Dhakpatti<br/><em>Rajpur Road, Dehradun.</em></h2>
+    <p class="reveal" style="max-width:520px;margin:0 auto 3rem; font-family:var(--font-display); font-style:italic; font-size:1.2rem; line-height:1.5;">Open daily · 12:00 PM – 11:30 PM<br/>Late nights Friday &amp; Saturday until 12:30 AM.</p>
     <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
       <a href="contact.html#reserve" class="btn btn-solid">Reserve</a>
       <a href="https://www.google.com/maps/dir/?api=1&destination=Farzi+Cafe+Rooftop+Dining+Bar+Rajpur+Road+Dehradun" target="_blank" rel="noopener" class="btn">Directions</a>
@@ -280,7 +269,7 @@
         <div class="social-links" aria-label="Social media">
           <a href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.07-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33 0 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38S.94 3.35.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s0 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.66.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.66 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.34.94 20.66.53 19.87.22 19.11.07 18.22-.07 16.95 0 15.67 0 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zm6.41-10.41a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z"/></svg></a>
           <a href="https://www.facebook.com/farzicafedehradun" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.68 0H1.32C.59 0 0 .59 0 1.32v21.36C0 23.41.59 24 1.32 24h11.5v-9.28h-3.13v-3.63h3.13V8.41c0-3.1 1.89-4.79 4.66-4.79 1.32 0 2.46.1 2.79.14v3.24h-1.91c-1.5 0-1.79.71-1.79 1.76v2.31h3.58l-.47 3.63h-3.11V24h6.1c.73 0 1.32-.59 1.32-1.32V1.32C24 .59 23.41 0 22.68 0z"/></svg></a>
-          <a href="https://www.zomato.com/dehradun/farzi-caf%C3%A9-rooftop-dining-bar-rajpur" target="_blank" rel="noopener" aria-label="Zomato"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><text x="12" y="16" font-family="serif" font-size="11" text-anchor="middle" fill="#0d0d0d" font-weight="bold">Z</text></svg></a>
+          <a href="https://www.zomato.com/dehradun/farzi-caf%C3%A9-rooftop-dining-bar-rajpur" target="_blank" rel="noopener" aria-label="Zomato"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><text x="12" y="16" font-family="serif" font-size="11" text-anchor="middle" fill="#0C0A08" font-weight="bold">Z</text></svg></a>
         </div>
       </div>
 
@@ -312,27 +301,21 @@
     </div>
 
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Farzi Café Dehradun · A Massive Restaurants Concept · All Rights Reserved</span>
+      <span>© MMXXVI Farzi Café Dehradun · A Massive Restaurants Concept · All Rights Reserved</span>
       <span>Crafted on Rajpur Road.</span>
     </div>
   </div>
 </footer>
 
-<!-- Floating WhatsApp FAB (revealed past hero) -->
+<!-- Floating WhatsApp FAB -->
 <a class="fab-whatsapp" href="https://wa.me/917617771124?text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.307 1.265.489 1.697.626.713.226 1.362.194 1.875.118.572-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042z"/></svg>
 </a>
 
-<!-- Sticky mobile reservation bar (revealed past hero) -->
+<!-- Sticky mobile reservation bar -->
 <div class="mobile-cta-bar" aria-label="Quick actions">
-  <a href="tel:+917617771124" class="solid">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
-    Call
-  </a>
-  <a href="https://wa.me/917617771124?text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21" target="_blank" rel="noopener" class="wa">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
-    WhatsApp
-  </a>
+  <a href="tel:+917617771124" class="solid">Call</a>
+  <a href="https://wa.me/917617771124" target="_blank" rel="noopener" class="wa">WhatsApp</a>
   <a href="contact.html#reserve">Reserve</a>
 </div>
 
