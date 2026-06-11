@@ -206,7 +206,7 @@
         setTimeout(() => {
           preloader.classList.add('done');
           try { sessionStorage.setItem('farzi-preloader-seen', '1'); } catch (_) { /* private browsing */ }
-        }, 900);
+        }, 400);
       });
     }
   }
@@ -274,7 +274,9 @@
           return;
         }
         curtain.classList.add('up');
-        setTimeout(() => { window.location.href = href; }, 500);
+        // Just long enough for the curtain to visibly start — with
+        // prefetch/prerender below, the next page is usually already loaded
+        setTimeout(() => { window.location.href = href; }, 90);
       });
     });
 
@@ -285,6 +287,39 @@
         // Also ensure preloader stays hidden on bfcache restores
         if (preloader) preloader.classList.add('skip');
       }
+    });
+  }
+
+  // ---------- Instant navigation: prerender / prefetch internal pages ----------
+  // Chromium: Speculation Rules prerender on hover. Others: <link rel=prefetch>.
+  const isInternalPage = (a) => {
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') ||
+        href.startsWith('tel:') || href.startsWith('http') ||
+        a.target === '_blank' || a.hasAttribute('download')) return null;
+    return (href.endsWith('.html') || href === '/') ? href : null;
+  };
+  if (window.HTMLScriptElement && HTMLScriptElement.supports && HTMLScriptElement.supports('speculationrules')) {
+    const rules = document.createElement('script');
+    rules.type = 'speculationrules';
+    rules.textContent = JSON.stringify({
+      prerender: [{ where: { selector_matches: 'a[href$=".html"]' }, eagerness: 'moderate' }]
+    });
+    document.head.appendChild(rules);
+  } else {
+    const prefetched = new Set();
+    const prefetch = (a) => {
+      const href = isInternalPage(a);
+      if (!href || prefetched.has(href)) return;
+      prefetched.add(href);
+      const l = document.createElement('link');
+      l.rel = 'prefetch';
+      l.href = href;
+      document.head.appendChild(l);
+    };
+    document.querySelectorAll('a[href]').forEach(a => {
+      a.addEventListener('pointerenter', () => prefetch(a), { passive: true });
+      a.addEventListener('touchstart', () => prefetch(a), { passive: true });
     });
   }
 
