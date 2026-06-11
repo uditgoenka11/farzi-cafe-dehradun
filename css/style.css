@@ -28,9 +28,9 @@
   --color-whatsapp: #25D366;
   --color-whatsapp-dark: #1ea654;
 
-  --font-display: 'Cormorant Garamond', 'Playfair Display', 'Times New Roman', serif;
-  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-accent: 'Manrope', sans-serif;
+  --font-display: 'Fraunces', 'Instrument Serif', 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-accent: 'DM Sans', sans-serif;
 
   --max-w: 1320px;
   --gutter: clamp(1.2rem, 4vw, 3rem);
@@ -63,13 +63,19 @@ body {
   font-family: var(--font-body);
   background: var(--color-bg);
   color: var(--color-text);
-  line-height: 1.65;
-  font-size: 16px;
-  font-weight: 300;
+  line-height: 1.6;
+  font-size: 15.5px;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
   overflow-x: hidden;
+}
+/* Fraunces variable font axes for crisper display rendering */
+h1, h2, h3, h4, .pull-quote blockquote, .hero h1, .reserve-inner h1 {
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
 }
 
 img, video { max-width: 100%; display: block; height: auto; }
@@ -79,16 +85,16 @@ a:hover { color: var(--color-gold-light); }
 
 h1,h2,h3,h4 {
   font-family: var(--font-display);
-  font-weight: 300;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
   margin: 0 0 0.6em;
   color: var(--color-text);
 }
 
-h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 300; }
-h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 300; }
-h3 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); }
+h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); font-weight: 400; }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); font-weight: 400; }
+h3 { font-size: clamp(1.05rem, 1.6vw, 1.35rem); font-weight: 500; }
 
 h1 em, h2 em, h3 em { font-style: italic; color: var(--color-gold); font-weight: 400; }
 
@@ -199,8 +205,8 @@ p { margin: 0 0 1.2em; color: var(--color-text-dim); }
 }
 .nav-links a {
   color: var(--color-text);
-  font-size: 0.82rem;
-  letter-spacing: 0.16em;
+  font-size: 0.7rem;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   font-weight: 500;
   font-family: var(--font-body);
@@ -404,22 +410,24 @@ p { margin: 0 0 1.2em; color: var(--color-text-dim); }
   background: var(--color-gold);
 }
 .hero h1 {
-  margin: 0 0 1.6rem;
+  margin: 0 0 1.4rem;
   font-family: var(--font-display);
-  font-weight: 300;
-  font-size: clamp(4.5rem, 13vw, 11rem);
-  line-height: 0.92;
-  letter-spacing: -0.035em;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 6.5vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
   color: var(--color-text);
-  max-width: 14ch;
+  max-width: 16ch;
   opacity: 0;
   animation: fadeUp 1.8s var(--ease) 0.55s forwards;
   text-shadow: 0 4px 40px rgba(0,0,0,0.45);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
 }
 .hero h1 em {
   font-style: italic;
   font-weight: 400;
   color: var(--color-gold);
+  font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
 }
 /* Bottom row with top divider (Hillcrest grid) */
 .hero-bottom-row {
@@ -436,12 +444,13 @@ p { margin: 0 0 1.2em; color: var(--color-text-dim); }
 .hero p.lead {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+  font-weight: 400;
+  font-size: clamp(0.98rem, 1.15vw, 1.15rem);
   color: var(--color-text);
-  max-width: 460px;
-  line-height: 1.5;
+  max-width: 420px;
+  line-height: 1.55;
   margin: 0;
+  opacity: 0.92;
   text-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
 .hero-actions {
@@ -814,12 +823,24 @@ form.reservation textarea { resize: vertical; min-height: 120px; }
 
 /* ----- Page header (non-home) ----- */
 .page-header {
-  padding: 11rem 0 5rem;
+  padding: clamp(7rem, 12vw, 9rem) 0 clamp(3rem, 6vw, 4rem);
   text-align: center;
   background: linear-gradient(180deg, var(--color-bg-2), var(--color-bg));
   border-bottom: 1px solid var(--color-line);
 }
-.page-header h1 { margin: 0; font-style: italic; }
+.page-header h1 {
+  margin: 0;
+  font-style: italic;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+.page-header p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--color-text-dim);
+}
 
 /* ----- Article (blog post) ----- */
 article.post {
@@ -917,12 +938,13 @@ article.post .post-meta {
 .pull-quote blockquote {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1.8rem, 4.5vw, 3.4rem);
-  line-height: 1.25;
+  font-weight: 400;
+  font-size: clamp(1.25rem, 2.6vw, 2rem);
+  line-height: 1.35;
   color: var(--color-text);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   margin: 0;
+  font-variation-settings: "opsz" 144, "SOFT" 40;
 }
 .pull-quote blockquote em { font-style: italic; color: var(--color-gold); }
 .pull-quote cite {
@@ -958,20 +980,20 @@ article.post .post-meta {
 .highlights-header .roman { margin-bottom: 2rem; }
 .highlights-header h2 {
   font-family: var(--font-display);
-  font-weight: 300;
-  font-size: clamp(2.6rem, 6vw, 5rem);
-  line-height: 1.02;
-  letter-spacing: -0.025em;
-  margin-bottom: 1.4rem;
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
 }
 .highlights-header h2 em { font-style: italic; color: var(--color-gold); }
 .highlights-header p {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.15rem;
+  font-size: 1.02rem;
   color: var(--color-text-dim);
-  max-width: 520px; margin: 0 auto;
-  line-height: 1.5;
+  max-width: 460px; margin: 0 auto;
+  line-height: 1.55;
 }
 .highlights-grid {
   display: grid;
@@ -1020,14 +1042,14 @@ article.post .post-meta {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
-  font-size: 1.45rem;
-  line-height: 1.25;
+  font-size: 1.15rem;
+  line-height: 1.3;
   color: var(--color-text);
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.6rem;
 }
 .highlight-card p {
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.88rem;
+  line-height: 1.65;
   color: var(--color-text-dim);
   margin: 0;
 }
@@ -1060,9 +1082,9 @@ article.post .post-meta {
 }
 .section-title {
   font-family: var(--font-display);
-  font-weight: 300;
-  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-  line-height: 1;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.08;
   letter-spacing: -0.02em;
   margin: 0;
 }
@@ -1076,11 +1098,19 @@ article.post .post-meta {
 /* ---------- Refined buttons ---------- */
 .btn, .btn-solid {
   border-radius: 999px !important;
-  padding: 1rem 2.2rem;
+  padding: 0.85rem 1.9rem;
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 0.72rem;
-  letter-spacing: 0.32em;
+  font-size: 0.66rem;
+  letter-spacing: 0.28em;
+}
+.btn-whatsapp {
+  padding: 0.85rem 1.6rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.66rem;
+  letter-spacing: 0.28em;
+  border-radius: 999px;
 }
 
 /* ---------- Slow universal transitions ---------- */
