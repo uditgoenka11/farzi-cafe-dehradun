@@ -285,57 +285,10 @@ p { margin: 0 0 1.2em; color: var(--color-text); }
   }
   .nav-links a::after { display: none; }
 
-  /* ===== Scroll-revealed inline nav on mobile =====
-     Once user scrolls past hero, header gets .scrolled and the nav links
-     unfold horizontally in the top bar alongside the locked brand mark.
-     Hamburger hides — links are right there. */
-  .site-header.scrolled .nav-links {
-    position: static;
-    inset: auto;
-    flex-direction: row;
-    background: transparent;
-    transform: none;
-    padding: 0;
-    gap: 0.7rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    flex: 1;
-    min-width: 0;
-  }
-  .site-header.scrolled .nav-links::-webkit-scrollbar { display: none; }
-  .site-header.scrolled .nav-links a {
-    padding: 4px 0;
-    border-bottom: none;
-    width: auto;
-    text-align: left;
-    white-space: nowrap;
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
-    flex-shrink: 0;
-  }
-  .site-header.scrolled .nav-toggle { display: none; }
-
-  /* Brand collapses to the round monogram so the nav links have room */
-  .site-header.scrolled .brand {
-    width: 34px;
-    height: 34px;
-    background: url('/images/brand/favicon-96.png') no-repeat center / contain;
-    flex-shrink: 0;
-    font-size: 0;
-    overflow: hidden;
-  }
-  .site-header.scrolled .brand > span,
-  .site-header.scrolled .brand-sub { display: none; }
-}
-
-/* On very narrow screens, drop the underline animation; keep tap target */
-@media (max-width: 480px) {
-  .site-header.scrolled .nav-links a { font-size: 0.58rem; letter-spacing: 0.1em; }
-  .site-header.scrolled .nav-links { gap: 0.55rem; }
+  /* On mobile, the scrolled state just tightens the header — full nav stays
+     in the hamburger menu where it has room to breathe. Brand shrinks
+     slightly for compactness. */
+  .site-header.scrolled .brand img { height: 34px; }
 }
 
 /* ----- Hero — cinematic, editorial, bottom-anchored (Hillcrest spec) ----- */
