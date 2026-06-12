@@ -203,16 +203,28 @@
       preloaderSeen = !!sessionStorage.getItem('farzi-preloader-seen');
     } catch (_) { /* private browsing */ }
 
-    if (preloaderSeen || prefersReducedMotion) {
-      // Skip the preloader entirely — CSS handles display:none via .skip
+    const markSeen = () => { try { sessionStorage.setItem('farzi-preloader-seen', '1'); } catch (_) {} };
+    const dismiss = () => { preloader.classList.add('done'); markSeen(); };
+
+    if (preloaderSeen) {
       preloader.classList.add('skip');
+    } else if (prefersReducedMotion) {
+      // Reduced motion: show static F monogram + bar, dismiss after load
+      window.addEventListener('load', () => setTimeout(dismiss, 400));
     } else {
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          preloader.classList.add('done');
-          try { sessionStorage.setItem('farzi-preloader-seen', '1'); } catch (_) { /* private browsing */ }
-        }, 400);
-      });
+      // First-visit cinematic: play the gold intro video, dismiss on `ended`
+      const introVideo = preloader.querySelector('.preloader-video');
+      if (introVideo) {
+        preloader.classList.add('preloader--intro');
+        introVideo.addEventListener('ended', dismiss, { once: true });
+        introVideo.addEventListener('error', dismiss, { once: true });
+        // Safety net: if video stalls or autoplay blocked, dismiss after 3.2s
+        setTimeout(dismiss, 3200);
+        const playP = introVideo.play();
+        if (playP && typeof playP.catch === 'function') playP.catch(dismiss);
+      } else {
+        window.addEventListener('load', () => setTimeout(dismiss, 400));
+      }
     }
   }
 

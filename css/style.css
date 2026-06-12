@@ -1046,6 +1046,26 @@ article.post .post-meta {
   object-fit: contain;
   filter: drop-shadow(0 4px 18px rgba(201, 169, 97, 0.18));
 }
+.preloader-video {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: min(72vw, 560px);
+  height: min(72vw, 560px);
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  display: none;
+  filter: drop-shadow(0 6px 32px rgba(201, 169, 97, 0.22));
+}
+.preloader--intro .preloader-video { display: block; }
+.preloader--intro .preloader-monogram,
+.preloader--intro .preloader-bar { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .preloader-video { display: none !important; }
+  .preloader--intro .preloader-monogram { display: flex; }
+  .preloader--intro .preloader-bar { display: block; }
+}
 .preloader-bar {
   width: 120px; height: 1px;
   background: var(--color-line);
