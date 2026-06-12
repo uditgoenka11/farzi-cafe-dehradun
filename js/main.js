@@ -150,10 +150,16 @@
       const today = new Date();
       const max = new Date();
       max.setDate(today.getDate() + 30);
-      dateInput.min = fmtYmd(today);
+      const todayYmd = fmtYmd(today);
+      dateInput.min = todayYmd;
       dateInput.max = fmtYmd(max);
+      if (!dateInput.value || dateInput.value < todayYmd) dateInput.value = todayYmd;
     };
     setDateBounds();
+    // Make the whole field surface open the calendar where supported.
+    if (dateInput && typeof dateInput.showPicker === 'function') {
+      dateInput.addEventListener('click', () => { try { dateInput.showPicker(); } catch (_) {} });
+    }
     if (dateInput) dateInput.addEventListener('focus', setDateBounds);
 
     const formatBookingDate = (ymd) => {
