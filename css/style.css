@@ -220,11 +220,11 @@ p { margin: 0 0 1.2em; color: var(--color-text); }
 
 /* Wide-wordmark variant — used on the homepage. The wordmark is ~2:1,
    so height drives size and width follows naturally. */
-.site-header .brand--wordmark img { height: 64px; }
+.site-header .brand--wordmark img { height: 96px; }
 
 @media (max-width: 720px) {
   .site-header .brand img { height: 42px; }
-  .site-header .brand--wordmark img { height: 46px; }
+  .site-header .brand--wordmark img { height: 64px; }
 }
 
 .nav-links {
