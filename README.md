@@ -1,6 +1,6 @@
 # Farzi Café Dehradun — Website
 
-Static, SEO-optimised website for **Farzi Café Dehradun** — modern Indian bistro and rooftop bar at Pacific Mall, Jakhan, Rajpur Road. Built as plain HTML + CSS + JS, ready to deploy to GitHub Pages or any static host.
+Static, SEO-optimised website for **Farzi Café Dehradun** — modern Indian bistro and rooftop bar at 222, Dhakpatti, Rajpur Road, Dehradun. Built as plain HTML + CSS + JS, ready to deploy to GitHub Pages or any static host.
 
 ## What's inside
 
@@ -109,4 +109,4 @@ farzi-cafe-dehradun/
 
 ---
 
-**Live address:** Rooftop, Pacific Mall, Jakhan, Rajpur Road, Dehradun 248001 · [Get directions](https://maps.app.goo.gl/6Ymuwk7bfogPwDnz5)
+**Live address:** 222, Dhakpatti, Rajpur Road, Dehradun 248009 · [Get directions](https://maps.app.goo.gl/6Ymuwk7bfogPwDnz5)

@@ -7,13 +7,16 @@
 <title>Blog | Farzi Café Dehradun — Rooftop Kitchen Stories</title>
 <meta name="description" content="Recipes, behind-the-scenes notes from the kitchen, Dehradun food culture, cocktail histories and the occasional chef's rant. The Farzi Café Dehradun blog." />
 <meta name="keywords" content="Farzi Cafe Dehradun blog, modern Indian recipes, Dehradun food blog, restaurant blog India, chef recipes" />
-<meta name="robots" content="index, follow" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://farzicafedehradun.com/blog.html" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Blog | Farzi Café Dehradun" />
 <meta property="og:description" content="Stories from the rooftop kitchen — recipes, cocktails, Dehradun food culture." />
 <meta property="og:image" content="https://farzicafedehradun.com/images/menu/dessert-chocolate-pour.jpg" />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1270" />
+<meta property="og:image:alt" content="Farzi Café Dehradun — rooftop dining and modern Indian bistro on Rajpur Road" />
 <meta property="og:url" content="https://farzicafedehradun.com/blog.html" />
 
 <meta name="twitter:card" content="summary_large_image" />
@@ -21,6 +24,7 @@
 <meta name="twitter:description" content="Stories from the rooftop kitchen — recipes, cocktails, Dehradun food culture." />
 <meta name="twitter:image" content="https://farzicafedehradun.com/images/menu/dessert-chocolate-pour.jpg" />
 
+<link rel="preload" as="image" href="images/gallery/07-mountain-view.jpg" fetchpriority="high" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="/images/brand/favicon-192.png" />
@@ -65,7 +69,7 @@
     <a href="index.html" class="brand" aria-label="Farzi Café Dehradun home">
       <img src="images/brand/farzi-logo-header.png" alt="Farzi Café Dehradun" width="200" height="200" decoding="async" fetchpriority="high" />
     </a>
-    <nav>
+    <nav aria-label="Primary">
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
@@ -77,7 +81,7 @@
       </ul>
     </nav>
     <a href="contact.html#reserve" class="btn btn-solid nav-cta">Reserve</a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
   </div>
 </header>
 

@@ -121,13 +121,25 @@
   const path = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(a => {
     const href = a.getAttribute('href');
-    if (href === path) a.classList.add('active');
-    if (path === '' && href === 'index.html') a.classList.add('active');
+    if (href === path || (path === '' && href === 'index.html')) {
+      a.classList.add('active');
+      a.setAttribute('aria-current', 'page');
+    }
   });
 
   // ---------- Footer year ----------
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+  document.querySelectorAll('[data-year]').forEach((n) => { n.textContent = new Date().getFullYear(); });
+
+  // ---------- Past events: dim row + remove Reserve button ----------
+  const today0 = new Date(); today0.setHours(0, 0, 0, 0);
+  document.querySelectorAll('.event-row[data-event-iso]').forEach((row) => {
+    const iso = row.getAttribute('data-event-iso');
+    if (!iso) return;
+    const d = new Date(iso + 'T23:59:59');
+    if (d < today0) row.classList.add('past');
+  });
 
   // ---------- Reservation form → WhatsApp ----------
   const WA_NUMBER = '917617771124';
