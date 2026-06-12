@@ -1057,7 +1057,29 @@ article.post .post-meta {
   object-fit: contain;
   display: none;
   filter: drop-shadow(0 6px 32px rgba(201, 169, 97, 0.22));
+  transition: opacity 0.3s ease;
 }
+
+/* F-monogram flight: clone travels from center → nav brand position */
+.brand-fly {
+  position: fixed;
+  z-index: 10000;
+  pointer-events: none;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 18px rgba(201, 169, 97, 0.22));
+  transition:
+    left   0.65s cubic-bezier(.65, .05, .36, 1),
+    top    0.65s cubic-bezier(.65, .05, .36, 1),
+    width  0.65s cubic-bezier(.65, .05, .36, 1),
+    height 0.65s cubic-bezier(.65, .05, .36, 1);
+  will-change: left, top, width, height;
+}
+.preloader--exiting {
+  background: transparent;
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+.preloader--exiting .preloader-video { opacity: 0; }
 .preloader--intro .preloader-video { display: block; }
 .preloader--intro .preloader-monogram,
 .preloader--intro .preloader-bar { display: none; }

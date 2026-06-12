@@ -206,6 +206,66 @@
     const markSeen = () => { try { sessionStorage.setItem('farzi-preloader-seen', '1'); } catch (_) {} };
     const dismiss = () => { preloader.classList.add('done'); markSeen(); };
 
+    // F-monogram flight: clone the static gold F, start it at screen center
+    // at the same size the intro video filled, then transition to the nav
+    // brand's exact bounding box. Real nav brand is hidden during transit
+    // and revealed when the clone lands.
+    const flyMonogramToNav = (onLanded) => {
+      const navBrand = document.querySelector('.site-header .brand img');
+      const introVideo = preloader.querySelector('.preloader-video');
+      if (!navBrand || !introVideo) { onLanded(); return; }
+
+      const targetRect = navBrand.getBoundingClientRect();
+      const startRect  = introVideo.getBoundingClientRect();
+      if (!targetRect.width || !startRect.width) { onLanded(); return; }
+
+      const fly = document.createElement('img');
+      fly.className = 'brand-fly';
+      fly.src = navBrand.getAttribute('src');
+      fly.alt = '';
+      fly.setAttribute('aria-hidden', 'true');
+      // Start sized to match the F crest visible in the wordmark video —
+      // about a third of the video frame, sitting where the crest lived in
+      // the wordmark composition (top-center). This makes the flight feel
+      // like a continuation of the intro, not a separate element.
+      const videoSize = Math.min(startRect.width, startRect.height);
+      const startSize = Math.min(220, videoSize * 0.36);
+      const startLeft = startRect.left + (startRect.width  - startSize) / 2;
+      const startTop  = startRect.top  + videoSize * 0.30 - startSize / 2;
+      fly.style.left   = startLeft + 'px';
+      fly.style.top    = startTop  + 'px';
+      fly.style.width  = startSize + 'px';
+      fly.style.height = startSize + 'px';
+      document.body.appendChild(fly);
+
+      // Hide the real nav brand while the clone is in transit
+      navBrand.style.visibility = 'hidden';
+      // Begin fading out the video + preloader background simultaneously
+      preloader.classList.add('preloader--exiting');
+
+      // Next frame: transition to the nav brand's exact position + size
+      requestAnimationFrame(() => {
+        fly.style.left   = targetRect.left   + 'px';
+        fly.style.top    = targetRect.top    + 'px';
+        fly.style.width  = targetRect.width  + 'px';
+        fly.style.height = targetRect.height + 'px';
+      });
+
+      let landed = false;
+      const land = () => {
+        if (landed) return;
+        landed = true;
+        navBrand.style.visibility = '';
+        fly.remove();
+        onLanded();
+      };
+      fly.addEventListener('transitionend', (e) => {
+        if (e.propertyName === 'top' || e.propertyName === 'left') land();
+      });
+      // Safety net for landing
+      setTimeout(land, 900);
+    };
+
     if (preloaderSeen) {
       preloader.classList.add('skip');
     } else if (prefersReducedMotion) {
@@ -234,9 +294,14 @@
                 }))
           : Promise.resolve();
 
-        Promise.all([introDone, heroReady]).then(dismiss);
+        // When the intro + hero are both ready: launch the F flight, then dismiss.
+        // Skip the flight if the safety net already dismissed us.
+        Promise.all([introDone, heroReady]).then(() => {
+          if (preloader.classList.contains('done')) return;
+          flyMonogramToNav(dismiss);
+        });
 
-        // Safety net: never block longer than 1.3s
+        // Safety net: never block longer than 1.3s — straight dismiss, no flight
         setTimeout(dismiss, 1300);
 
         const playP = introVideo.play();
