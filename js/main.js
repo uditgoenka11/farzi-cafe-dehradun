@@ -140,14 +140,48 @@
 
   const form = document.querySelector('form.reservation');
   if (form) {
+    // Constrain date input: today .. today + 30 days. Set on load AND on focus
+    // so users who keep the page open overnight still see the right window.
+    const dateInput = form.querySelector('#date');
+    const pad = (n) => String(n).padStart(2, '0');
+    const fmtYmd = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    const setDateBounds = () => {
+      if (!dateInput) return;
+      const today = new Date();
+      const max = new Date();
+      max.setDate(today.getDate() + 30);
+      dateInput.min = fmtYmd(today);
+      dateInput.max = fmtYmd(max);
+    };
+    setDateBounds();
+    if (dateInput) dateInput.addEventListener('focus', setDateBounds);
+
+    const formatBookingDate = (ymd) => {
+      if (!ymd) return '';
+      const [y, m, d] = ymd.split('-').map(Number);
+      if (!y || !m || !d) return ymd;
+      const dt = new Date(y, m - 1, d);
+      return dt.toLocaleDateString('en-IN', {
+        weekday: 'short', day: 'numeric', month: 'long', year: 'numeric',
+      });
+    };
+    const formatBookingTime = (hhmm) => {
+      if (!hhmm) return '';
+      const [h, m] = hhmm.split(':').map(Number);
+      if (Number.isNaN(h) || Number.isNaN(m)) return hhmm;
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      const h12 = h % 12 || 12;
+      return `${h12}:${pad(m)} ${ampm}`;
+    };
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const data = new FormData(form);
       const name = (data.get('name') || '').toString().trim();
       const phone = (data.get('phone') || '').toString().trim();
       const guests = (data.get('guests') || '').toString().trim();
-      const date = (data.get('date') || '').toString().trim();
-      const time = (data.get('time') || '').toString().trim();
+      const date = formatBookingDate((data.get('date') || '').toString().trim());
+      const time = formatBookingTime((data.get('time') || '').toString().trim());
       const notes = (data.get('notes') || '').toString().trim();
 
       const msg =

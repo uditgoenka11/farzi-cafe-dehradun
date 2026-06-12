@@ -824,6 +824,14 @@ form.reservation input:focus, form.reservation select:focus, form.reservation te
 form.reservation textarea { resize: vertical; min-height: 120px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+.field-hint {
+  display: block;
+  margin-top: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+}
 
 .map-embed { aspect-ratio: 16/9; border: 1px solid var(--color-line); }
 .map-embed iframe { width: 100%; height: 100%; border: 0; filter: invert(0.9) hue-rotate(180deg) saturate(0.6); }
