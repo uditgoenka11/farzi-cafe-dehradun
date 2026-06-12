@@ -1033,7 +1033,7 @@ article.post .post-meta {
   background: var(--color-bg);
   display: flex; align-items: center; justify-content: center;
   flex-direction: column;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
 }
 .preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
 .preloader-monogram {

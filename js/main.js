@@ -218,8 +218,8 @@
         preloader.classList.add('preloader--intro');
         introVideo.addEventListener('ended', dismiss, { once: true });
         introVideo.addEventListener('error', dismiss, { once: true });
-        // Safety net: if video stalls or autoplay blocked, dismiss after 3.2s
-        setTimeout(dismiss, 3200);
+        // Safety net: if video stalls or autoplay blocked, dismiss after 1.3s
+        setTimeout(dismiss, 1300);
         const playP = introVideo.play();
         if (playP && typeof playP.catch === 'function') playP.catch(dismiss);
       } else {
