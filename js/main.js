@@ -212,14 +212,33 @@
       // Reduced motion: show static F monogram + bar, dismiss after load
       window.addEventListener('load', () => setTimeout(dismiss, 400));
     } else {
-      // First-visit cinematic: play the gold intro video, dismiss on `ended`
+      // First-visit cinematic: hold preloader until BOTH the intro has played
+      // AND the hero video has buffered enough to start, capped by a safety net.
       const introVideo = preloader.querySelector('.preloader-video');
       if (introVideo) {
         preloader.classList.add('preloader--intro');
-        introVideo.addEventListener('ended', dismiss, { once: true });
-        introVideo.addEventListener('error', dismiss, { once: true });
-        // Safety net: if video stalls or autoplay blocked, dismiss after 1.3s
+
+        const introDone = new Promise((res) => {
+          introVideo.addEventListener('ended', res, { once: true });
+          introVideo.addEventListener('error', res, { once: true });
+        });
+
+        const heroVideo = document.querySelector('.hero video');
+        const heroReady = heroVideo
+          ? (heroVideo.readyState >= 3
+              ? Promise.resolve()
+              : new Promise((res) => {
+                  heroVideo.addEventListener('canplay',   res, { once: true });
+                  heroVideo.addEventListener('loadeddata', res, { once: true });
+                  heroVideo.addEventListener('error',     res, { once: true });
+                }))
+          : Promise.resolve();
+
+        Promise.all([introDone, heroReady]).then(dismiss);
+
+        // Safety net: never block longer than 1.3s
         setTimeout(dismiss, 1300);
+
         const playP = introVideo.play();
         if (playP && typeof playP.catch === 'function') playP.catch(dismiss);
       } else {
