@@ -224,18 +224,26 @@
       fly.src = navBrand.getAttribute('src');
       fly.alt = '';
       fly.setAttribute('aria-hidden', 'true');
-      // Start sized to match the F crest visible in the wordmark video —
-      // about a third of the video frame, sitting where the crest lived in
-      // the wordmark composition (top-center). This makes the flight feel
-      // like a continuation of the intro, not a separate element.
+      // Start the clone sized + positioned to match how it lived in the
+      // intro video. If the nav brand is the F monogram (square), launch
+      // from the wordmark's crest. If it's the wordmark itself (~2:1),
+      // launch at almost the full wordmark size so there's no jarring jump
+      // when the video element fades out.
       const videoSize = Math.min(startRect.width, startRect.height);
-      const startSize = Math.min(220, videoSize * 0.36);
-      const startLeft = startRect.left + (startRect.width  - startSize) / 2;
-      const startTop  = startRect.top  + videoSize * 0.30 - startSize / 2;
-      fly.style.left   = startLeft + 'px';
-      fly.style.top    = startTop  + 'px';
-      fly.style.width  = startSize + 'px';
-      fly.style.height = startSize + 'px';
+      const navAspect = (navBrand.naturalWidth || 1) / (navBrand.naturalHeight || 1);
+      const isWordmark = navAspect > 1.5;
+      const startWidth = isWordmark
+        ? videoSize * 0.92
+        : Math.min(220, videoSize * 0.36) * navAspect;
+      const startHeight = startWidth / navAspect;
+      const startLeft   = startRect.left + (startRect.width  - startWidth)  / 2;
+      const startTop    = isWordmark
+        ? startRect.top + (startRect.height - startHeight) / 2
+        : startRect.top + videoSize * 0.30 - startHeight / 2;
+      fly.style.left   = startLeft   + 'px';
+      fly.style.top    = startTop    + 'px';
+      fly.style.width  = startWidth  + 'px';
+      fly.style.height = startHeight + 'px';
       document.body.appendChild(fly);
 
       // Hide the real nav brand while the clone is in transit
