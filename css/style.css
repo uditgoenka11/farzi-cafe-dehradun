@@ -457,6 +457,38 @@ p { margin: 0 0 1.2em; color: var(--color-text); }
   text-transform: uppercase;
 }
 
+.hero-wordmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -54%);
+  width: min(46vw, 560px);
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.55));
+  opacity: 0;
+  animation: heroWordmarkIn 1.6s cubic-bezier(.16, .84, .44, 1) 0.45s forwards;
+}
+.hero-wordmark img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@keyframes heroWordmarkIn {
+  from { opacity: 0; transform: translate(-50%, -54%) scale(0.94); }
+  to   { opacity: 1; transform: translate(-50%, -54%) scale(1); }
+}
+@media (max-width: 720px) {
+  .hero-wordmark { width: 80vw; transform: translate(-50%, -58%); }
+  @keyframes heroWordmarkIn {
+    from { opacity: 0; transform: translate(-50%, -58%) scale(0.94); }
+    to   { opacity: 1; transform: translate(-50%, -58%) scale(1); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-wordmark { animation: none; opacity: 1; }
+}
+
 .hero-content {
   position: relative;
   height: 100%;
@@ -1005,13 +1037,14 @@ article.post .post-meta {
 }
 .preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
 .preloader-monogram {
-  width: 72px; height: 72px;
-  border: 1px solid var(--color-gold);
-  border-radius: 50%;
+  width: 86px; height: 86px;
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display); font-style: italic; font-size: 32px;
-  color: var(--color-gold);
   opacity: 0; animation: preloaderIn 0.45s ease 0s forwards;
+}
+.preloader-monogram img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 18px rgba(201, 169, 97, 0.18));
 }
 .preloader-bar {
   width: 120px; height: 1px;
