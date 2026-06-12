@@ -194,6 +194,10 @@ p { margin: 0 0 1.2em; color: var(--color-text); }
   letter-spacing: 0.18em;
   color: var(--color-text);
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  text-decoration: none;
 }
 .brand .gold { color: var(--color-gold); }
 .brand-sub {
@@ -204,6 +208,17 @@ p { margin: 0 0 1.2em; color: var(--color-text); }
   color: var(--color-muted);
   margin-top: 2px;
   font-weight: 400;
+}
+.site-header .brand img {
+  display: block;
+  height: 54px;
+  width: auto;
+  transition: opacity var(--transition), transform var(--transition);
+}
+.site-nav .brand:hover img,
+.site-nav .brand:focus-visible img { opacity: 0.85; transform: scale(1.02); }
+@media (max-width: 720px) {
+  .site-header .brand img { height: 42px; }
 }
 
 .nav-links {
