@@ -1563,3 +1563,115 @@ a, .card, .review, .menu-item, .gallery-item, .highlight-card, .ig-tile {
 }
 .occasion-card p { font-size: 0.88rem; color: var(--color-text-dim); margin: 0; }
 
+
+/* ============================================================
+   Accessibility + Mobile UX hardening pass (audit June 2026)
+   ============================================================ */
+
+/* --- Skip-to-content link (WCAG 2.4.1) --- */
+.skip-link {
+  position: absolute;
+  left: -9999px; top: 0;
+  background: var(--color-gold);
+  color: var(--color-bg);
+  padding: 0.8rem 1.2rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 10001;
+}
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 2px;
+}
+
+/* --- Universal :focus-visible — gold ring on tab focus (WCAG 2.4.11) --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+/* Form fields get a stronger focus state */
+form.reservation input:focus,
+form.reservation select:focus,
+form.reservation textarea:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+  border-color: var(--color-gold);
+}
+
+/* --- WCAG 2.5.5 minimum tap targets — 44×44 --- */
+.nav-links a { min-height: 44px; display: inline-flex; align-items: center; }
+.mobile-cta-bar a { min-height: 44px; }
+.fab-whatsapp { min-width: 50px; min-height: 50px; }
+.scroll-cue { padding: 4px; }
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next { min-width: 44px; min-height: 44px; }
+
+/* --- iOS form-input zoom prevention — 16px or larger triggers no zoom --- */
+form.reservation input,
+form.reservation select,
+form.reservation textarea {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+@media (min-width: 720px) {
+  form.reservation input,
+  form.reservation select,
+  form.reservation textarea {
+    font-size: 0.95rem; /* shrink back on desktop where zoom doesn't apply */
+  }
+}
+
+/* --- Sticky bar + FAB safe-area-inset (iPhone home indicator) --- */
+.mobile-cta-bar {
+  padding-bottom: calc(0.6rem + env(safe-area-inset-bottom, 0px));
+}
+@media (max-width: 720px) {
+  .fab-whatsapp {
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  }
+  body { padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* --- prefers-reduced-motion — keep .reveal visible by default --- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-media,
+  .hero-light,
+  .hero-particle {
+    animation: none !important;
+  }
+  .preloader { display: none !important; }
+}
+
+/* --- Gallery items keyboard accessible --- */
+.gallery-item[data-lightbox] {
+  cursor: zoom-in;
+}
+.gallery-item[data-lightbox]:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* --- Touch action hint for buttons (haptic feel on mobile) --- */
+.btn, .btn-solid, .btn-whatsapp, .fab-whatsapp, .mobile-cta-bar a {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}

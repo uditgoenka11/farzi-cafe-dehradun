@@ -63,6 +63,16 @@
     });
   }
 
+  // ---------- Gallery keyboard activation (Enter/Space) ----------
+  document.querySelectorAll('.gallery-item[role="button"]').forEach(el => {
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        el.click();
+      }
+    });
+  });
+
   // ---------- Lightbox ----------
   const lb = document.querySelector('.lightbox');
   const lbImg = lb ? lb.querySelector('.lightbox-media') : null;
