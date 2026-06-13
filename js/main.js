@@ -150,6 +150,39 @@
            '&type=phone_number&app_absent=0';
   }
 
+  // ---------- GA4 conversion event tracking ----------
+  // Fires whenever the user clicks anything that's a conversion intent:
+  // WhatsApp links, tel: links, the Reserve CTA, or the form submit.
+  // Safe to call even if gtag is not loaded — guarded by typeof check.
+  function trackConversion(eventName, params) {
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, params || {});
+      }
+    } catch (_) { /* no-op */ }
+  }
+
+  // Delegate one click listener for the whole document — covers buttons
+  // injected later (e.g. mobile-cta-bar) without needing per-page wiring.
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a, button');
+    if (!a) return;
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    const text = (a.textContent || '').trim().slice(0, 60);
+    const ctx  = a.closest('section')?.id || a.closest('section')?.className?.split(' ')[0] || 'page';
+    if (href.includes('wa.me/') || href.includes('api.whatsapp.com')) {
+      trackConversion('whatsapp_click', { link_text: text, location: ctx });
+    } else if (href.startsWith('tel:')) {
+      trackConversion('phone_call_click', { link_text: text, phone: href.replace('tel:', ''), location: ctx });
+    } else if (href.includes('#reserve') || /reserve/i.test(text)) {
+      trackConversion('reserve_cta_click', { link_text: text, location: ctx });
+    } else if (href.includes('menu.html')) {
+      trackConversion('view_menu_click', { link_text: text, location: ctx });
+    } else if (/get directions|directions/i.test(text)) {
+      trackConversion('directions_click', { link_text: text, location: ctx });
+    }
+  }, { passive: true });
+
   const form = document.querySelector('form.reservation');
   if (form) {
     // Constrain date input: today .. today + 30 days. Set on load AND on focus
@@ -211,6 +244,9 @@
         'Time: ' + time +
         (notes ? '\nOccasion / Notes: ' + notes : '');
 
+      trackConversion('reservation_form_submit', {
+        guests: guests, date: date, time: time, has_notes: notes ? 1 : 0,
+      });
       window.open(buildWaUrl(msg), '_blank');
     });
   }
