@@ -34,7 +34,7 @@
   --gutter: clamp(1.2rem, 4vw, 3rem);
   --radius: 2px;
   --shadow-lg: 0 30px 60px -20px rgba(0,0,0,0.7);
-  --shadow-gold: 0 10px 30px -10px rgba(201,169,97,0.35);
+  --shadow-gold: 0 10px 30px -10px rgb(var(--color-gold-rgb) / 0.35);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -279,6 +279,8 @@ p { margin: 0 0 1.2em; color: var(--color-text); }
     padding: 2rem 0;
     transform: translateY(-110%);
     transition: transform var(--transition);
+    overflow-y: auto;
+    max-height: calc(100vh - 80px);
   }
   .nav-links.open { transform: translateY(0); }
   .nav-links a {
@@ -299,7 +301,8 @@ p { margin: 0 0 1.2em; color: var(--color-text); }
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 720px;
+  height: 100dvh;
+  min-height: max(568px, 85vh);
   overflow: hidden;
   isolation: isolate;
   color: var(--color-text);
@@ -327,7 +330,7 @@ p { margin: 0 0 1.2em; color: var(--color-text); }
   position: absolute; inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: radial-gradient(ellipse 80% 60% at 30% 20%, rgba(201,169,97,0.14) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 60% at 30% 20%, rgb(var(--color-gold-rgb) / 0.14) 0%, transparent 70%);
   animation: lightDrift 16s ease-in-out infinite alternate;
 }
 @keyframes lightDrift {
@@ -938,7 +941,7 @@ form.reservation, form.event-enquiry textarea { resize: vertical; min-height: 12
   display: block;
   width: clamp(220px, 24vw, 280px);
   height: auto;
-  filter: drop-shadow(0 4px 24px rgba(201, 169, 97, 0.14));
+  filter: drop-shadow(0 4px 24px rgb(var(--color-gold-rgb) / 0.14));
 }
 
 /* Watermark F monogram behind chapter headings — feels like a chapter stamp
@@ -987,7 +990,7 @@ form.reservation, form.event-enquiry textarea { resize: vertical; min-height: 12
   width: 56px;
   height: 56px;
   display: block;
-  filter: drop-shadow(0 4px 18px rgba(201, 169, 97, 0.22));
+  filter: drop-shadow(0 4px 18px rgb(var(--color-gold-rgb) / 0.22));
 }
 
 .social-links { display: flex; gap: 1rem; }
@@ -1089,7 +1092,7 @@ article.post .post-meta {
 .preloader-monogram img {
   width: 100%; height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 4px 18px rgba(201, 169, 97, 0.18));
+  filter: drop-shadow(0 4px 18px rgb(var(--color-gold-rgb) / 0.18));
 }
 .preloader-video {
   position: absolute;
@@ -1101,7 +1104,7 @@ article.post .post-meta {
   max-height: 80vh;
   object-fit: contain;
   display: none;
-  filter: drop-shadow(0 6px 32px rgba(201, 169, 97, 0.22));
+  filter: drop-shadow(0 6px 32px rgb(var(--color-gold-rgb) / 0.22));
   transition: opacity 0.3s ease;
 }
 
@@ -1112,7 +1115,7 @@ article.post .post-meta {
   pointer-events: none;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 4px 18px rgba(201, 169, 97, 0.22));
+  filter: drop-shadow(0 4px 18px rgb(var(--color-gold-rgb) / 0.22));
   transition:
     left   0.65s cubic-bezier(.65, .05, .36, 1),
     top    0.65s cubic-bezier(.65, .05, .36, 1),
@@ -1363,7 +1366,7 @@ article.post .post-meta {
 }
 .signature-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(201, 169, 97, 0.32);
+  border-color: rgb(var(--color-gold-rgb) / 0.32);
 }
 .signature-card img {
   width: 100%;
@@ -1519,6 +1522,7 @@ a, .card, .review, .menu-item, .gallery-item, .highlight-card, .ig-tile {
   bottom: 24px; right: 24px;
   z-index: 90;
   width: 50px; height: 50px;
+  min-width: 50px; min-height: 50px;
   border-radius: 50%;
   background: var(--color-whatsapp);
   box-shadow: 0 8px 24px -8px rgba(37, 211, 102, 0.45);
@@ -1540,7 +1544,11 @@ a, .card, .review, .menu-item, .gallery-item, .highlight-card, .ig-tile {
 }
 .fab-whatsapp svg { width: 24px; height: 24px; }
 @media (max-width: 768px) {
-  .fab-whatsapp { bottom: 84px; width: 46px; height: 46px; }
+  .fab-whatsapp {
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+    width: 46px; height: 46px;
+    min-width: 46px; min-height: 46px;
+  }
   .fab-whatsapp svg { width: 22px; height: 22px; }
 }
 
@@ -1872,7 +1880,6 @@ form.reservation, form.event-enquiry textarea:focus {
 /* --- WCAG 2.5.5 minimum tap targets — 44×44 --- */
 .nav-links a { min-height: 44px; display: inline-flex; align-items: center; }
 .mobile-cta-bar a { min-height: 44px; }
-.fab-whatsapp { min-width: 50px; min-height: 50px; }
 .scroll-cue { padding: 4px; }
 .lightbox-close,
 .lightbox-prev,
@@ -1898,9 +1905,6 @@ form.reservation, form.event-enquiry textarea {
   padding-bottom: calc(0.6rem + env(safe-area-inset-bottom, 0px));
 }
 @media (max-width: 720px) {
-  .fab-whatsapp {
-    bottom: calc(84px + env(safe-area-inset-bottom, 0px));
-  }
   body { padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px)); }
 }
 
@@ -1917,6 +1921,19 @@ form.reservation, form.event-enquiry textarea {
     animation: none !important;
   }
   .preloader { display: none !important; }
+  /* Force hero CTAs, rating chip, and signature cards visible for users
+     who have animations off — without this, opacity:0 initial states
+     leave these elements permanently invisible. */
+  .hero .eyebrow,
+  .hero h1,
+  .hero-bottom-row,
+  .hero-actions,
+  .rating-chip,
+  .signature-card {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
 }
 
 /* --- Gallery items keyboard accessible --- */

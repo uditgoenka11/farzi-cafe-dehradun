@@ -270,7 +270,7 @@
   "mainEntity": {
     "@type": "Restaurant",
     "name": "Farzi Café Dehradun",
-  "@id": "https://farzicafedehradun.com/",
+    "@id": "https://farzicafedehradun.com/",
     "telephone": "+91-76177-71124",
     "address": {
       "@type": "PostalAddress",
@@ -279,7 +279,20 @@
       "addressRegion": "Uttarakhand",
       "postalCode": "248009",
       "addressCountry": "IN"
-    }
+    },
+    "paymentAccepted": "Cash, Credit Card, Debit Card, UPI, Apple Pay, Google Pay",
+    "currenciesAccepted": "INR",
+    "hasMap": "https://www.google.com/maps?q=Farzi+Cafe+Rooftop+Dining+Bar+Rajpur+Road+Dehradun",
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Valet parking", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Outdoor seating", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Wheelchair accessible", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Cocktails", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Reservations", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Private dining", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Mountain view", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Live music", "value": false}
+    ]
   }
 }
 </script>
@@ -350,10 +363,15 @@
     <div class="roman">I · Get in Touch</div>
     <h1>Let's <em>talk</em>.</h1>
     <p class="reserve-sub">Reserve a table, plan a celebration, or just tell us when you'd like to drop by. We reply on WhatsApp within the hour during business hours.</p>
+    <div class="rating-chip" style="margin-bottom:1.4rem;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-gold)" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <strong>4.5</strong> / 4,001 reviews
+    </div>
+    <p style="font-family:var(--font-accent);font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--color-gold);margin:0 0 1.6rem;opacity:0.9;">Conde Nast Traveller — Top 50 Restaurants in India (2021–2024)</p>
     <div class="reserve-cta-card">
       <div class="reserve-cta-label">Reserve · Enquire · Visit</div>
       <div class="reserve-cta-row">
-        <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%21%20I%27d%20like%20to%20book%20a%20table%20at%20Farzi%20Caf%C3%A9%20Dehradun.&type=phone_number&app_absent=0" class="btn-whatsapp" target="_blank" rel="noopener">
+        <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%21%20I%27d%20like%20to%20book%20a%20table%20at%20Farzi%20Caf%C3%A9%20Dehradun.&type=phone_number&app_absent=0" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
           WhatsApp
         </a>
@@ -373,11 +391,11 @@
     </div>
     <div class="info-col reveal">
       <h4>Reach Us</h4>
-      <p><a href="tel:+917617771124">+91 76177 71124</a><br/><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp Us</a></p>
+      <p><a href="tel:+917617771124">+91 76177 71124</a><br/><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></p>
     </div>
     <div class="info-col reveal">
       <h4>Follow</h4>
-      <p><a href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener">@farzicafedehradun</a></p>
+      <p><a href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener noreferrer">@farzicafedehradun</a></p>
     </div>
   </div>
 </section>
@@ -392,32 +410,36 @@
     <form class="reservation" novalidate>
       <div>
         <label for="name">Your Name</label>
-        <input id="name" name="name" type="text" required autocomplete="name" />
+        <input id="name" name="name" type="text" required autocomplete="name" aria-describedby="name-error" />
+        <div id="name-error" class="field-error" role="alert" aria-live="polite" hidden>Please enter your name.</div>
       </div>
       <div class="form-row">
         <div>
           <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" required autocomplete="tel" />
+          <input id="phone" name="phone" type="tel" required autocomplete="tel" aria-describedby="phone-error" />
+          <div id="phone-error" class="field-error" role="alert" aria-live="polite" hidden>Please enter your phone number.</div>
         </div>
         <div>
           <label for="guests">Guests</label>
-          <select id="guests" name="guests" required>
+          <select id="guests" name="guests" required aria-describedby="guests-error">
             <option value="">Select</option>
             <option>1</option><option>2</option><option>3</option><option>4</option>
             <option>5</option><option>6</option><option>7</option><option>8</option>
             <option>9+ (we'll arrange)</option>
           </select>
+          <div id="guests-error" class="field-error" role="alert" aria-live="polite" hidden>Please select the number of guests.</div>
         </div>
       </div>
       <div class="form-row">
         <div>
           <label for="date">Date</label>
-          <input id="date" name="date" type="date" required onkeydown="return false" inputmode="none" />
+          <input id="date" name="date" type="date" required onkeydown="return false" inputmode="none" aria-describedby="date-error" />
           <small class="field-hint">Tap to open calendar · within the next 30 days</small>
+          <div id="date-error" class="field-error" role="alert" aria-live="polite" hidden>Please select a date.</div>
         </div>
         <div>
           <label for="time">Time</label>
-          <select id="time" name="time" required>
+          <select id="time" name="time" required aria-describedby="time-error">
             <option value="">Select</option>
             <option value="12:00">12:00 PM</option>
             <option value="12:30">12:30 PM</option>
@@ -442,6 +464,7 @@
             <option value="22:00">10:00 PM</option>
           </select>
           <small class="field-hint">Last seating 10:00 PM · we close 11:30 PM</small>
+          <div id="time-error" class="field-error" role="alert" aria-live="polite" hidden>Please select a time.</div>
         </div>
       </div>
       <div>
@@ -502,7 +525,7 @@
       </details>
       <details class="faq-item">
         <summary>How far in advance should I book a table at Farzi Café Dehradun?</summary>
-        <div class="faq-item-body">For Friday and Saturday sunset slots, book by Wednesday. For weekday evenings, same-day booking usually works. <a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp +91 76177 71124</a> for the fastest response.</div>
+        <div class="faq-item-body">For Friday and Saturday sunset slots, book by Wednesday. For weekday evenings, same-day booking usually works. <a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">WhatsApp +91 76177 71124</a> for the fastest response.</div>
       </details>
     </div>
   </div>
@@ -521,7 +544,7 @@
         <p>Modern Indian cuisine, crafted cocktails and rooftop views on Rajpur Road, Dehradun.</p>
       </div>
       <div class="footer-col"><h4>Visit</h4><p>222, Dhakpatti<br/>Rajpur Road<br/>Dehradun, Uttarakhand</p></div>
-      <div class="footer-col"><h4>Reach Us</h4><p><a href="tel:+917617771124">+91 76177 71124</a></p><p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp Us</a></p></div>
+      <div class="footer-col"><h4>Reach Us</h4><p><a href="tel:+917617771124">+91 76177 71124</a></p><p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></p></div>
       <div class="footer-col"><h4>Explore</h4><ul>
         <li><a href="menu.html">Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="events.html">Events</a></li>
         <li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
@@ -534,12 +557,12 @@
   </div>
 </footer>
 
-<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
 </a>
 <div class="mobile-cta-bar" aria-label="Quick actions">
   <a href="tel:+917617771124" class="solid">Call</a>
-  <a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="wa">WhatsApp</a>
+  <a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="wa">WhatsApp</a>
   <a href="#reserve">Reserve</a>
 </div>
 

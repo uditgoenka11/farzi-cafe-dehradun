@@ -32,7 +32,6 @@
 <meta name="ICBM" content="30.3886193, 78.0920258" />
 
 <link rel="preload" as="image" href="images/hero/sunset-rooftop-mountains.jpg" fetchpriority="high" />
-<link rel="preload" as="video" href="videos/farzi-cafe-tour-1.mp4" type="video/mp4" fetchpriority="high" />
 <link rel="preload" as="image" href="images/brand/farzi-wordmark-gold.png" />
 
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -44,6 +43,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" />
 
 <link rel="stylesheet" href="css/style.css" />
@@ -63,9 +63,9 @@
   "@type": "Restaurant",
   "name": "Farzi Café Dehradun",
   "image": [
-    "https://farzicafedehradun.com/images/hero/sunset-rooftop-mountains.jpg",
-    "https://farzicafedehradun.com/images/hero/bar-cabanas-night.jpg",
-    "https://farzicafedehradun.com/images/hero/interior-f-logo.jpg"
+    {"@type":"ImageObject","url":"https://farzicafedehradun.com/images/hero/sunset-rooftop-mountains.jpg","width":1920,"height":1270,"caption":"Farzi Café Dehradun rooftop terrace at sunset with panoramic Mussoorie hill views, Rajpur Road"},
+    {"@type":"ImageObject","url":"https://farzicafedehradun.com/images/hero/bar-cabanas-night.jpg","width":1920,"height":1604,"caption":"Farzi Café Dehradun bar and private cabanas lit at night — onyx-lit bar, brass canopies, rooftop dining"},
+    {"@type":"ImageObject","url":"https://farzicafedehradun.com/images/hero/interior-f-logo.jpg","width":1920,"height":1270,"caption":"Farzi Café Dehradun interior featuring the signature Farzi monogram and designer brass decor on Rajpur Road"}
   ],
   "@id": "https://farzicafedehradun.com/",
   "url": "https://farzicafedehradun.com/",
@@ -116,19 +116,19 @@
           "@type": "MenuItem",
           "name": "Galouti on a Stone",
           "description": "Slow-cooked lamb galouti served on warm Himalayan slate, with saffron emulsion and a mini ulte tawa parantha.",
-          "menuAddOn": {"@type":"MenuSection","name":"Small Plate"}
+          "offers": {"@type":"Offer","priceCurrency":"INR","availability":"https://schema.org/InStock"}
         },
         {
           "@type": "MenuItem",
           "name": "Dal Chawal Arancini",
           "description": "Yellow dal and basmati rolled into crisp arancini, smoked tomato chutney. The dish that taught Dehradun what modern Indian could be.",
-          "menuAddOn": {"@type":"MenuSection","name":"Signature"}
+          "offers": {"@type":"Offer","priceCurrency":"INR","availability":"https://schema.org/InStock"}
         },
         {
           "@type": "MenuItem",
           "name": "Saffron Sour",
           "description": "House gin, blood orange and Kashmiri saffron lifted by a cloud of citrus foam — the bar's most-ordered cocktail.",
-          "menuAddOn": {"@type":"MenuSection","name":"Cocktail"}
+          "offers": {"@type":"Offer","priceCurrency":"INR","availability":"https://schema.org/InStock"}
         }
       ]
     }]
@@ -136,7 +136,22 @@
   "sameAs": [
     "https://www.instagram.com/farzicafedehradun/",
     "https://www.facebook.com/farzicafedehradun",
-    "https://www.zomato.com/dehradun/farzi-caf%C3%A9-rooftop-dining-bar-rajpur"
+    "https://www.zomato.com/dehradun/farzi-caf%C3%A9-rooftop-dining-bar-rajpur",
+    "https://www.tripadvisor.in/Restaurant_Review-g297687-d33672175-Reviews-Farzi_Cafe_Dehradun-Dehradun_Dehradun_District_Uttarakhand.html",
+    "https://www.eazydiner.com/dehradun/farzi-cafe-rajpur-road-dehradun-686890"
+  ],
+  "paymentAccepted": "Cash, Credit Card, Debit Card, UPI, Apple Pay, Google Pay",
+  "currenciesAccepted": "INR",
+  "hasMap": "https://www.google.com/maps?q=Farzi+Cafe+Rooftop+Dining+Bar+Rajpur+Road+Dehradun",
+  "amenityFeature": [
+    {"@type":"LocationFeatureSpecification","name":"Valet parking","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Outdoor seating","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Rooftop dining","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Private cabanas","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Wheelchair accessible","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Reservations accepted","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Cocktails","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Mountain view","value":true}
   ]
 }
 </script>
@@ -253,7 +268,7 @@
   "name": "Farzi Café Dehradun — Modern Indian Bistro & Rooftop Bar",
   "speakable": {
     "@type": "SpeakableSpecification",
-    "cssSelector": [".rating-chip", ".info-col p"]
+    "cssSelector": [".rating-chip", ".awards-row", ".signature-card p"]
   }
 }
 </script>
@@ -315,6 +330,7 @@
   </div>
 
   <div class="hero-content">
+    <h1 class="sr-only">Farzi Café Dehradun — Modern Indian Bistro &amp; Rooftop Bar on Rajpur Road</h1>
     <div class="hero-bottom-row">
       <div class="hero-actions">
         <a href="contact.html#reserve" class="btn btn-solid">Reserve a Table</a>
@@ -484,7 +500,7 @@
     <p class="reveal" style="max-width:480px;margin:0 auto 2.4rem; font-family:var(--font-display); font-size:1.02rem; line-height:1.55;">Open daily · 12 PM – 11:30 PM</p>
     <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
       <a href="contact.html#reserve" class="btn btn-solid">Reserve</a>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Farzi+Cafe+Rooftop+Dining+Bar+Rajpur+Road+Dehradun" target="_blank" rel="noopener" class="btn">Directions</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Farzi+Cafe+Rooftop+Dining+Bar+Rajpur+Road+Dehradun" target="_blank" rel="noopener noreferrer" class="btn">Directions</a>
       <a href="tel:+917617771124" class="btn">+91 76177 71124</a>
     </div>
   </div>
@@ -538,9 +554,9 @@
         </div>
         <p>Modern Indian cuisine, crafted cocktails and rooftop views on Rajpur Road, Dehradun.</p>
         <div class="social-links" aria-label="Social media">
-          <a href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.07-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33 0 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38S.94 3.35.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s0 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.66.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.66 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.34.94 20.66.53 19.87.22 19.11.07 18.22-.07 16.95 0 15.67 0 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zm6.41-10.41a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z"/></svg></a>
-          <a href="https://www.facebook.com/farzicafedehradun" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.68 0H1.32C.59 0 0 .59 0 1.32v21.36C0 23.41.59 24 1.32 24h11.5v-9.28h-3.13v-3.63h3.13V8.41c0-3.1 1.89-4.79 4.66-4.79 1.32 0 2.46.1 2.79.14v3.24h-1.91c-1.5 0-1.79.71-1.79 1.76v2.31h3.58l-.47 3.63h-3.11V24h6.1c.73 0 1.32-.59 1.32-1.32V1.32C24 .59 23.41 0 22.68 0z"/></svg></a>
-          <a href="https://www.zomato.com/dehradun/farzi-caf%C3%A9-rooftop-dining-bar-rajpur" target="_blank" rel="noopener" aria-label="Zomato"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><text x="12" y="16" font-family="serif" font-size="11" text-anchor="middle" fill="#0C0A08" font-weight="bold">Z</text></svg></a>
+          <a href="https://www.instagram.com/farzicafedehradun/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.07-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33 0 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38S.94 3.35.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s0 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.66.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.66 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.34.94 20.66.53 19.87.22 19.11.07 18.22-.07 16.95 0 15.67 0 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zm6.41-10.41a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z"/></svg></a>
+          <a href="https://www.facebook.com/farzicafedehradun" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.68 0H1.32C.59 0 0 .59 0 1.32v21.36C0 23.41.59 24 1.32 24h11.5v-9.28h-3.13v-3.63h3.13V8.41c0-3.1 1.89-4.79 4.66-4.79 1.32 0 2.46.1 2.79.14v3.24h-1.91c-1.5 0-1.79.71-1.79 1.76v2.31h3.58l-.47 3.63h-3.11V24h6.1c.73 0 1.32-.59 1.32-1.32V1.32C24 .59 23.41 0 22.68 0z"/></svg></a>
+          <a href="https://www.zomato.com/dehradun/farzi-caf%C3%A9-rooftop-dining-bar-rajpur" target="_blank" rel="noopener noreferrer" aria-label="Zomato"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><text x="12" y="16" font-family="serif" font-size="11" text-anchor="middle" fill="#0C0A08" font-weight="bold">Z</text></svg></a>
         </div>
       </div>
 
@@ -552,7 +568,7 @@
       <div class="footer-col">
         <h4>Reach Us</h4>
         <p><a href="tel:+917617771124">+91 76177 71124</a></p>
-        <p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp Us</a></p>
+        <p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></p>
         <p>Daily · 12 PM – 11:30 PM</p>
       </div>
 
@@ -579,14 +595,14 @@
 </footer>
 
 <!-- Floating WhatsApp FAB -->
-<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042z"/></svg>
 </a>
 
 <!-- Sticky mobile reservation bar -->
 <div class="mobile-cta-bar" aria-label="Quick actions">
   <a href="tel:+917617771124" class="solid">Call</a>
-  <a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="wa">WhatsApp</a>
+  <a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="wa">WhatsApp</a>
   <a href="contact.html#reserve">Reserve</a>
 </div>
 

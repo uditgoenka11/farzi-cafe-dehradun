@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#0C0A08" />
 <title>About Farzi Café Dehradun — Modern Indian Bistro Story</title>
-<meta name="description" content="Farzi Café Dehradun on Rajpur Road — the story behind India's most awarded modern Indian bistro, our chef's philosophy and how we landed in the foothills of the Himalayas." />
+<meta name="description" content="Farzi Café Dehradun on Rajpur Road — India's most awarded modern Indian bistro. Chef Aman Bisht, Zorawar Kalra's vision, Himalayan rooftop dining." />
 <meta name="keywords" content="about Farzi Cafe, Farzi Cafe story, Massive Restaurants, modern Indian bistro India, Zorawar Kalra, Indian fine dining award" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://farzicafedehradun.com/about.html" />
@@ -42,13 +42,29 @@
   "@type": "Organization",
   "name": "Farzi Café Dehradun",
   "url": "https://farzicafedehradun.com/",
-  "logo": "https://farzicafedehradun.com/images/brand/favicon-512.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://farzicafedehradun.com/images/brand/favicon-512.png",
+    "width": 512,
+    "height": 512
+  },
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Zorawar_Kalra",
+    "https://www.instagram.com/farzicafedehradun/",
+    "https://www.facebook.com/farzicafedehradun"
+  ],
   "parentOrganization": {
     "@type": "Organization",
     "name": "Massive Restaurants Pvt Ltd"
   },
   "foundingDate": "2014",
-  "founder": {"@type":"Person","name":"Zorawar Kalra"},
+  "founder": {
+    "@type": "Person",
+    "name": "Zorawar Kalra",
+    "jobTitle": "Founder & Managing Director",
+    "description": "Indian hospitality entrepreneur and Massive Restaurants co-founder; opened the original Farzi Café at Cyber Hub, Gurgaon in 2014. Son of legendary Indian chef Jiggs Kalra.",
+    "sameAs": ["https://en.wikipedia.org/wiki/Zorawar_Kalra"]
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "222, Dhakpatti, Rajpur Road",
@@ -56,6 +72,19 @@
     "addressRegion": "Uttarakhand",
     "postalCode": "248009",
     "addressCountry": "IN"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Aman Bisht",
+  "jobTitle": "Head Chef",
+  "description": "Formerly of Indian Accent and Bukhara; moved home to Uttarakhand to open the Farzi Café Dehradun kitchen in 2022.",
+  "worksFor": {
+    "@type": "Restaurant",
+    "@id": "https://farzicafedehradun.com/"
   }
 }
 </script>
@@ -143,6 +172,23 @@
         <h2>Indian food, no apology, all wonder.</h2>
         <p>Our menus are built on three rules. <strong>One:</strong> the spice must always lead. Whatever the technique, the dish must taste recognisably, defiantly Indian. <strong>Two:</strong> the plate must move you — visually, emotionally, theatrically. <strong>Three:</strong> nothing on the <a href="menu.html">menu</a> can take longer than 20 minutes from order to table.</p>
         <p>Behind those rules sits a 12-strong kitchen team led by Chef Aman Bisht, formerly of Indian Accent and Bukhara, who moved home to Uttarakhand to open the Dehradun kitchen in 2022.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="split">
+      <div class="split-content reveal">
+        <span class="eyebrow">The Founder</span>
+        <h2>Zorawar Kalra and the idea that changed Indian dining.</h2>
+        <p>In 2014, Zorawar Kalra walked into Gurgaon's Cyber Hub with a singular conviction: that Indian food deserved to stand alongside the great bistro cuisines of the world, not in apology but in absolute confidence. The result was the original Farzi Café — part theatre, part laboratory, part love letter to the subcontinent's larder.</p>
+        <p>Zorawar grew up in the shadow of his father, the legendary chef Jiggs Kalra, whose command of classical Indian cuisine defined a generation. Where his father codified tradition, Zorawar chose reinvention. Through Massive Restaurants — the group he co-founded, which today operates Farzi Café globally alongside Made in Punjab, Pa Pa Ya and Dragonfly Experience — he built a portfolio of concepts that treat Indian hospitality as a world-class creative endeavour.</p>
+        <p>The Dehradun chapter is among his most personal. Bringing Farzi to the foothills of the Himalayas was never about expansion for its own sake; it was about proving that modern Indian cooking belongs everywhere India is beautiful — and Dehradun, with its orchards and mountain light and unhurried grace, is precisely that.</p>
+      </div>
+      <div class="split-media reveal">
+        <img src="images/about/spiral-staircase.jpg" alt="Farzi Café Dehradun interior — a space shaped by the vision of Zorawar Kalra and Massive Restaurants" width="1600" height="1204" loading="lazy" />
       </div>
     </div>
   </div>
@@ -269,7 +315,7 @@
       <div class="footer-col">
         <h4>Reach Us</h4>
         <p><a href="tel:+917617771124">+91 76177 71124</a></p>
-        <p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp Us</a></p>
+        <p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
@@ -292,7 +338,7 @@
 
 <script src="js/main.js" defer></script>
 <!-- Floating WhatsApp FAB -->
-<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.307 1.265.489 1.697.626.713.226 1.362.194 1.875.118.572-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
 </a>
 
@@ -302,7 +348,7 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
     Call
   </a>
-  <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="wa">
+  <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="wa">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
     WhatsApp
   </a>

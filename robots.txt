@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /css/
+Disallow: /js/
 
 User-agent: GPTBot
 Allow: /

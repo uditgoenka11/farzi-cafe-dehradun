@@ -104,147 +104,147 @@
 <section style="padding-top:4rem;">
   <div class="container">
 
-    <div class="gallery-filter" role="tablist">
-      <button class="active" data-filter="all" type="button">All</button>
-      <button data-filter="rooftop" type="button">Rooftop &amp; Terrace</button>
-      <button data-filter="bar" type="button">Bar</button>
-      <button data-filter="interior" type="button">Interiors</button>
-      <button data-filter="food" type="button">Food &amp; Drinks</button>
-      <button data-filter="video" type="button">Videos</button>
+    <div class="gallery-filter" role="tablist" aria-label="Filter gallery by category">
+      <button class="active" data-filter="all" type="button" role="tab" aria-selected="true" aria-controls="gallery-grid">All</button>
+      <button data-filter="rooftop" type="button" role="tab" aria-selected="false" aria-controls="gallery-grid">Rooftop &amp; Terrace</button>
+      <button data-filter="bar" type="button" role="tab" aria-selected="false" aria-controls="gallery-grid">Bar</button>
+      <button data-filter="interior" type="button" role="tab" aria-selected="false" aria-controls="gallery-grid">Interiors</button>
+      <button data-filter="food" type="button" role="tab" aria-selected="false" aria-controls="gallery-grid">Food &amp; Drinks</button>
+      <button data-filter="video" type="button" role="tab" aria-selected="false" aria-controls="gallery-grid">Videos</button>
     </div>
 
-    <div class="gallery-grid">
+    <div class="gallery-grid" id="gallery-grid">
 
       <!-- Videos -->
-      <div class="gallery-item wide tall" tabindex="0" role="button" aria-label="Open gallery item" data-cat="video" data-lightbox data-type="video" data-full="videos/farzi-cafe-tour-1.mp4">
+      <div class="gallery-item wide tall" tabindex="0" role="button" aria-label="Open Farzi Café Dehradun rooftop video" data-cat="video" data-lightbox data-type="video" data-full="videos/farzi-cafe-tour-1.mp4">
         <video src="videos/farzi-cafe-tour-1.mp4" muted loop playsinline preload="none" poster="images/hero/sunset-rooftop-mountains.jpg" style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="video" data-lightbox data-type="video" data-full="videos/farzi-cafe-tour-2.mp4">
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open Farzi Café Dehradun rooftop video" data-cat="video" data-lightbox data-type="video" data-full="videos/farzi-cafe-tour-2.mp4">
         <video src="videos/farzi-cafe-tour-2.mp4" muted loop playsinline preload="none" poster="images/hero/bar-cabanas-night.jpg" style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
 
       <!-- Rooftop / Terrace -->
-      <div class="gallery-item tall" tabindex="0" role="button" aria-label="Open gallery item" data-cat="rooftop" data-lightbox data-full="images/hero/sunset-rooftop-mountains.jpg">
+      <div class="gallery-item tall" tabindex="0" role="button" aria-label="Open photo: rooftop at sunset with Mussoorie hills" data-cat="rooftop" data-lightbox data-full="images/hero/sunset-rooftop-mountains.jpg">
         <img src="images/hero/sunset-rooftop-mountains.jpg" alt="Sunset over Mussoorie hills from the Farzi Café rooftop" width="1920" height="1270" fetchpriority="high" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="rooftop" data-lightbox data-full="images/hero/terrace-signage-dusk.jpg">
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: terrace signage at dusk" data-cat="rooftop" data-lightbox data-full="images/hero/terrace-signage-dusk.jpg">
         <img src="images/hero/terrace-signage-dusk.jpg" alt="Farzi Café terrace signage at dusk" width="1920" height="1359" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="rooftop" data-lightbox data-full="images/gallery/01-terrace-day.jpg">
-        <img src="images/gallery/01-terrace-day.jpg" alt="Rooftop terrace seating in daylight with mountain backdrop" width="1400" height="923" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: open-air terrace in daylight" data-cat="rooftop" data-lightbox data-full="images/gallery/01-terrace-day.jpg">
+        <img src="images/gallery/01-terrace-day.jpg" alt="Daytime view of the open-air terrace at Farzi Café Dehradun with mountain backdrop" width="1400" height="923" loading="lazy" />
       </div>
-      <div class="gallery-item wide" tabindex="0" role="button" aria-label="Open gallery item" data-cat="rooftop" data-lightbox data-full="images/gallery/05-terrace-cabanas-wide.jpg">
-        <img src="images/gallery/05-terrace-cabanas-wide.jpg" alt="Wide view of terrace and cabanas at night" width="1400" height="933" loading="lazy" />
+      <div class="gallery-item wide" tabindex="0" role="button" aria-label="Open photo: wide terrace and cabanas at night" data-cat="rooftop" data-lightbox data-full="images/gallery/05-terrace-cabanas-wide.jpg">
+        <img src="images/gallery/05-terrace-cabanas-wide.jpg" alt="Wide panoramic view of rooftop terrace and private cabanas lit at night" width="1400" height="933" loading="lazy" />
       </div>
-      <div class="gallery-item tall" tabindex="0" role="button" aria-label="Open gallery item" data-cat="rooftop" data-lightbox data-full="images/gallery/02-cabanas-night.jpg">
-        <img src="images/gallery/02-cabanas-night.jpg" alt="Wooden cabanas with sheer curtains glowing at night" width="1400" height="934" loading="lazy" />
+      <div class="gallery-item tall" tabindex="0" role="button" aria-label="Open photo: private cabanas glowing at night" data-cat="rooftop" data-lightbox data-full="images/gallery/02-cabanas-night.jpg">
+        <img src="images/gallery/02-cabanas-night.jpg" alt="Wooden private cabanas with sheer curtains glowing in warm light at night" width="1400" height="934" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="rooftop" data-lightbox data-full="images/gallery/06-cabanas-corridor.jpg">
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: corridor of private cabanas" data-cat="rooftop" data-lightbox data-full="images/gallery/06-cabanas-corridor.jpg">
         <img src="images/gallery/06-cabanas-corridor.jpg" alt="Corridor of private cabanas at Farzi Café Dehradun" width="933" height="1400" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="rooftop" data-lightbox data-full="images/gallery/07-mountain-view.jpg">
-        <img src="images/gallery/07-mountain-view.jpg" alt="Mountain view from Farzi Café rooftop garden" width="1051" height="1400" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: Himalayan mountain view from rooftop" data-cat="rooftop" data-lightbox data-full="images/gallery/07-mountain-view.jpg">
+        <img src="images/gallery/07-mountain-view.jpg" alt="Himalayan mountain view from Farzi Café Dehradun rooftop garden" width="1051" height="1400" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="rooftop" data-lightbox data-full="images/gallery/10-terrace-signage-evening.jpg">
-        <img src="images/gallery/10-terrace-signage-evening.jpg" alt="Terrace signage in evening blue light" width="1400" height="951" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: terrace signage in evening light" data-cat="rooftop" data-lightbox data-full="images/gallery/10-terrace-signage-evening.jpg">
+        <img src="images/gallery/10-terrace-signage-evening.jpg" alt="Rooftop terrace Farzi Café signage bathed in blue evening light" width="1400" height="951" loading="lazy" />
       </div>
 
       <!-- Bar -->
-      <div class="gallery-item tall" tabindex="0" role="button" aria-label="Open gallery item" data-cat="bar" data-lightbox data-full="images/hero/bar-cabanas-night.jpg">
-        <img src="images/hero/bar-cabanas-night.jpg" alt="Onyx bar and cabanas glowing at night" width="1920" height="1604" loading="lazy" />
+      <div class="gallery-item tall" tabindex="0" role="button" aria-label="Open photo: onyx bar at night" data-cat="bar" data-lightbox data-full="images/hero/bar-cabanas-night.jpg">
+        <img src="images/hero/bar-cabanas-night.jpg" alt="Onyx bar and private cabanas glowing in warm light at night at Farzi Café Dehradun" width="1920" height="1604" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="bar" data-lightbox data-full="images/gallery/03-bar-golden.jpg">
-        <img src="images/gallery/03-bar-golden.jpg" alt="Golden lit bar canopy at Farzi Café Dehradun" width="1400" height="956" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: golden-lit bar canopy" data-cat="bar" data-lightbox data-full="images/gallery/03-bar-golden.jpg">
+        <img src="images/gallery/03-bar-golden.jpg" alt="Golden-lit bar canopy at Farzi Café Dehradun rooftop" width="1400" height="956" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="bar" data-lightbox data-full="images/gallery/04-bar-canopy.jpg">
-        <img src="images/gallery/04-bar-canopy.jpg" alt="Underside of the lit bar canopy" width="1050" height="1400" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: underside of bar canopy" data-cat="bar" data-lightbox data-full="images/gallery/04-bar-canopy.jpg">
+        <img src="images/gallery/04-bar-canopy.jpg" alt="Underside of the ornate lit bar canopy at Farzi Café Dehradun" width="1050" height="1400" loading="lazy" />
       </div>
-      <div class="gallery-item wide" tabindex="0" role="button" aria-label="Open gallery item" data-cat="bar" data-lightbox data-full="images/gallery/08-bar-onyx-night.jpg">
-        <img src="images/gallery/08-bar-onyx-night.jpg" alt="Onyx-lit bar counter at night" width="1122" height="1400" loading="lazy" />
+      <div class="gallery-item wide" tabindex="0" role="button" aria-label="Open photo: onyx bar counter at night" data-cat="bar" data-lightbox data-full="images/gallery/08-bar-onyx-night.jpg">
+        <img src="images/gallery/08-bar-onyx-night.jpg" alt="Backlit onyx bar counter at night, Farzi Café Dehradun" width="1122" height="1400" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="bar" data-lightbox data-full="images/gallery/11-bar-onyx-pool.jpg">
-        <img src="images/gallery/11-bar-onyx-pool.jpg" alt="Bar with pool area at Farzi Café rooftop" width="1120" height="1400" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: bar with rooftop pool area" data-cat="bar" data-lightbox data-full="images/gallery/11-bar-onyx-pool.jpg">
+        <img src="images/gallery/11-bar-onyx-pool.jpg" alt="Bar area overlooking the rooftop pool at Farzi Café Dehradun" width="1120" height="1400" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="bar" data-lightbox data-full="images/gallery/20-bar-indoor-tiles.jpg">
-        <img src="images/gallery/20-bar-indoor-tiles.jpg" alt="Indoor bar with hand-painted tiles" width="794" height="1400" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: indoor bar with hand-painted tiles" data-cat="bar" data-lightbox data-full="images/gallery/20-bar-indoor-tiles.jpg">
+        <img src="images/gallery/20-bar-indoor-tiles.jpg" alt="Indoor bar with hand-painted artisan tiles at Farzi Café Dehradun" width="794" height="1400" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="bar" data-lightbox data-full="images/gallery/22-bar-onyx-counter.jpg">
-        <img src="images/gallery/22-bar-onyx-counter.jpg" alt="Onyx bar counter with beer taps" width="933" height="1400" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: onyx bar counter with beer taps" data-cat="bar" data-lightbox data-full="images/gallery/22-bar-onyx-counter.jpg">
+        <img src="images/gallery/22-bar-onyx-counter.jpg" alt="Onyx bar counter with craft beer taps at Farzi Café Dehradun" width="933" height="1400" loading="lazy" />
       </div>
 
       <!-- Interiors -->
-      <div class="gallery-item tall" tabindex="0" role="button" aria-label="Open gallery item" data-cat="interior" data-lightbox data-full="images/hero/interior-f-logo.jpg">
-        <img src="images/hero/interior-f-logo.jpg" alt="Interior dining hall with neon Farzi F logo" width="1920" height="1288" loading="lazy" />
+      <div class="gallery-item tall" tabindex="0" role="button" aria-label="Open photo: interior dining hall with neon F logo" data-cat="interior" data-lightbox data-full="images/hero/interior-f-logo.jpg">
+        <img src="images/hero/interior-f-logo.jpg" alt="Dramatic interior dining hall with glowing neon Farzi F logo at Farzi Café Dehradun" width="1920" height="1288" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/about/spiral-staircase.jpg">
-        <img src="images/about/spiral-staircase.jpg" alt="Spiral staircase with mood lighting" width="1600" height="1204" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: spiral staircase with mood lighting" data-cat="interior" data-lightbox data-full="images/about/spiral-staircase.jpg">
+        <img src="images/about/spiral-staircase.jpg" alt="Sculptural spiral staircase with amber mood lighting at Farzi Café Dehradun" width="1600" height="1204" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/about/indoor-mountain-view.jpg">
-        <img src="images/about/indoor-mountain-view.jpg" alt="Indoor dining with full-height mountain view windows" width="1600" height="1073" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: indoor dining with mountain view windows" data-cat="interior" data-lightbox data-full="images/about/indoor-mountain-view.jpg">
+        <img src="images/about/indoor-mountain-view.jpg" alt="Indoor dining room with full-height windows framing Himalayan mountain views at Farzi Café Dehradun" width="1600" height="1073" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/about/f-logo-red-console.jpg">
-        <img src="images/about/f-logo-red-console.jpg" alt="Red console with Farzi F logo emblem" width="1067" height="1600" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: red console with Farzi F logo emblem" data-cat="interior" data-lightbox data-full="images/about/f-logo-red-console.jpg">
+        <img src="images/about/f-logo-red-console.jpg" alt="Red lacquered console table with gold Farzi F logo emblem in the entrance at Farzi Café Dehradun" width="1067" height="1600" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/events/wall-letters-neon.jpg">
-        <img src="images/events/wall-letters-neon.jpg" alt="Tell me yours, I'll tell you mine — neon wall art" width="1067" height="1600" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: neon wall art Tell me yours" data-cat="interior" data-lightbox data-full="images/events/wall-letters-neon.jpg">
+        <img src="images/events/wall-letters-neon.jpg" alt="Neon wall art reading Tell me yours, I'll tell you mine at Farzi Café Dehradun" width="1067" height="1600" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/09-interior-flowers-blue.jpg">
-        <img src="images/gallery/09-interior-flowers-blue.jpg" alt="Interior with baby's breath florals and blue mood lighting" width="1056" height="1400" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior with florals and blue lighting" data-cat="interior" data-lightbox data-full="images/gallery/09-interior-flowers-blue.jpg">
+        <img src="images/gallery/09-interior-flowers-blue.jpg" alt="Interior dining area with baby's breath floral arrangements under blue mood lighting at Farzi Café Dehradun" width="1056" height="1400" loading="lazy" />
       </div>
 
       <!-- Food / Drinks -->
-      <div class="gallery-item tall" tabindex="0" role="button" aria-label="Open gallery item" data-cat="food" data-lightbox data-full="images/menu/food-kebab-pink-onion.jpg">
-        <img src="images/menu/food-kebab-pink-onion.jpg" alt="Galouti kebab with pickled onion at Farzi Café Dehradun" width="1400" height="1400" loading="lazy" />
+      <div class="gallery-item tall" tabindex="0" role="button" aria-label="Open photo: Galouti kebab with pickled onion" data-cat="food" data-lightbox data-full="images/menu/food-kebab-pink-onion.jpg">
+        <img src="images/menu/food-kebab-pink-onion.jpg" alt="Galouti kebab plated with pickled pink onion at Farzi Café Dehradun" width="1400" height="1400" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="food" data-lightbox data-full="images/menu/food-kebab-leaves.jpg">
-        <img src="images/menu/food-kebab-leaves.jpg" alt="Croquettes plated on leaves with chutney" width="1400" height="962" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: croquettes on leaves with chutney" data-cat="food" data-lightbox data-full="images/menu/food-kebab-leaves.jpg">
+        <img src="images/menu/food-kebab-leaves.jpg" alt="Dal Chawal Arancini croquettes plated on banana leaf with smoked tomato chutney at Farzi Café Dehradun" width="1400" height="962" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="food" data-lightbox data-full="images/menu/dessert-chocolate-pour.jpg">
-        <img src="images/menu/dessert-chocolate-pour.jpg" alt="Chocolate dessert with edible flowers, sauce poured at table" width="933" height="1400" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: chocolate dessert with sauce poured tableside" data-cat="food" data-lightbox data-full="images/menu/dessert-chocolate-pour.jpg">
+        <img src="images/menu/dessert-chocolate-pour.jpg" alt="Chocolate dessert with edible flowers and sauce poured at the table at Farzi Café Dehradun" width="933" height="1400" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="food" data-lightbox data-full="images/menu/dessert-caramel-shard.jpg">
-        <img src="images/menu/dessert-caramel-shard.jpg" alt="Deconstructed dessert with caramel shard" width="1052" height="1400" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: deconstructed dessert with caramel shard" data-cat="food" data-lightbox data-full="images/menu/dessert-caramel-shard.jpg">
+        <img src="images/menu/dessert-caramel-shard.jpg" alt="Deconstructed caramel dessert with a dramatic sugar shard at Farzi Café Dehradun" width="1052" height="1400" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="food" data-lightbox data-full="images/menu/cocktail-orange.jpg">
-        <img src="images/menu/cocktail-orange.jpg" alt="Orange signature cocktail with bar in background" width="1052" height="1400" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: Saffron Sour orange cocktail" data-cat="food" data-lightbox data-full="images/menu/cocktail-orange.jpg">
+        <img src="images/menu/cocktail-orange.jpg" alt="Saffron Sour signature cocktail with blood orange and citrus foam, bar glowing behind" width="1052" height="1400" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="food" data-lightbox data-full="images/events/moon-lantern-menu.jpg">
-        <img src="images/events/moon-lantern-menu.jpg" alt="Beverages menu with lantern and full moon over hills" width="1200" height="1600" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: beverages menu with lantern and full moon" data-cat="food" data-lightbox data-full="images/events/moon-lantern-menu.jpg">
+        <img src="images/events/moon-lantern-menu.jpg" alt="Farzi Café Dehradun beverages menu beside a lantern with a full moon rising over the hills" width="1200" height="1600" loading="lazy" />
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="food" data-lightbox data-full="images/events/wine-candle-cabana.jpg">
-        <img src="images/events/wine-candle-cabana.jpg" alt="Rosé wine and candle in a private cabana" width="1200" height="1600" loading="lazy" />
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: rosé wine and candle in private cabana" data-cat="food" data-lightbox data-full="images/events/wine-candle-cabana.jpg">
+        <img src="images/events/wine-candle-cabana.jpg" alt="Rosé wine and flickering candle set for an intimate evening in a private cabana at Farzi Café Dehradun" width="1200" height="1600" loading="lazy" />
       </div>
 
       <!-- Extras from the detail set, mixed -->
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/12-detail-01.jpg"><img src="images/gallery/12-detail-01.jpg" alt="Farzi Café detail shot" width="1400" height="1038" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/13-detail-02.jpg"><img src="images/gallery/13-detail-02.jpg" alt="Farzi Café detail shot" width="1120" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="rooftop" data-lightbox data-full="images/gallery/14-detail-03.jpg"><img src="images/gallery/14-detail-03.jpg" alt="Farzi Café rooftop detail" width="1054" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/15-detail-04.jpg"><img src="images/gallery/15-detail-04.jpg" alt="Farzi Café interior detail" width="1054" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="bar" data-lightbox data-full="images/gallery/16-detail-05.jpg"><img src="images/gallery/16-detail-05.jpg" alt="Farzi Café bar detail" width="1124" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="rooftop" data-lightbox data-full="images/gallery/17-detail-06.jpg"><img src="images/gallery/17-detail-06.jpg" alt="Farzi Café rooftop detail" width="644" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/18-detail-07.jpg"><img src="images/gallery/18-detail-07.jpg" alt="Farzi Café interior detail" width="1050" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/19-detail-08.jpg"><img src="images/gallery/19-detail-08.jpg" alt="Farzi Café interior detail" width="1120" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/21-detail-09.jpg"><img src="images/gallery/21-detail-09.jpg" alt="Farzi Café interior detail" width="933" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/23-detail-10.jpg"><img src="images/gallery/23-detail-10.jpg" alt="Farzi Café interior detail" width="933" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/24-detail-11.jpg"><img src="images/gallery/24-detail-11.jpg" alt="Farzi Café interior detail" width="933" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="rooftop" data-lightbox data-full="images/gallery/25-detail-12.jpg"><img src="images/gallery/25-detail-12.jpg" alt="Farzi Café rooftop detail" width="932" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="rooftop" data-lightbox data-full="images/gallery/26-detail-13.jpg"><img src="images/gallery/26-detail-13.jpg" alt="Farzi Café rooftop detail" width="932" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="bar" data-lightbox data-full="images/gallery/27-detail-14.jpg"><img src="images/gallery/27-detail-14.jpg" alt="Farzi Café bar detail" width="1013" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/28-detail-15.jpg"><img src="images/gallery/28-detail-15.jpg" alt="Farzi Café interior detail" width="933" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="rooftop" data-lightbox data-full="images/gallery/29-detail-16.jpg"><img src="images/gallery/29-detail-16.jpg" alt="Farzi Café rooftop detail" width="1400" height="932" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/30-detail-17.jpg"><img src="images/gallery/30-detail-17.jpg" alt="Farzi Café interior detail" width="932" height="1400" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="rooftop" data-lightbox data-full="images/gallery/31-detail-18.jpg"><img src="images/gallery/31-detail-18.jpg" alt="Farzi Café rooftop detail" width="1400" height="932" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="bar" data-lightbox data-full="images/gallery/32-detail-19.jpg"><img src="images/gallery/32-detail-19.jpg" alt="Farzi Café bar detail" width="1400" height="950" loading="lazy" /></div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="interior" data-lightbox data-full="images/gallery/33-detail-20.jpg"><img src="images/gallery/33-detail-20.jpg" alt="Farzi Café interior detail" width="1400" height="1030" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior design detail at Farzi Café Dehradun" data-cat="interior" data-lightbox data-full="images/gallery/12-detail-01.jpg"><img src="images/gallery/12-detail-01.jpg" alt="Architectural interior design detail at Farzi Café Dehradun" width="1400" height="1038" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior furnishing detail at Farzi Café Dehradun" data-cat="interior" data-lightbox data-full="images/gallery/13-detail-02.jpg"><img src="images/gallery/13-detail-02.jpg" alt="Interior furnishing detail at Farzi Café Dehradun" width="1120" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: rooftop seating detail" data-cat="rooftop" data-lightbox data-full="images/gallery/14-detail-03.jpg"><img src="images/gallery/14-detail-03.jpg" alt="Rooftop seating and decor detail at Farzi Café Dehradun" width="1054" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior decor detail at Farzi Café Dehradun" data-cat="interior" data-lightbox data-full="images/gallery/15-detail-04.jpg"><img src="images/gallery/15-detail-04.jpg" alt="Interior decor detail at Farzi Café Dehradun" width="1054" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: bar design detail at Farzi Café Dehradun" data-cat="bar" data-lightbox data-full="images/gallery/16-detail-05.jpg"><img src="images/gallery/16-detail-05.jpg" alt="Bar design and lighting detail at Farzi Café Dehradun" width="1124" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: rooftop terrace detail at Farzi Café Dehradun" data-cat="rooftop" data-lightbox data-full="images/gallery/17-detail-06.jpg"><img src="images/gallery/17-detail-06.jpg" alt="Rooftop terrace architectural detail at Farzi Café Dehradun" width="644" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior ambience detail at Farzi Café Dehradun" data-cat="interior" data-lightbox data-full="images/gallery/18-detail-07.jpg"><img src="images/gallery/18-detail-07.jpg" alt="Interior ambience and lighting detail at Farzi Café Dehradun" width="1050" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior seating detail at Farzi Café Dehradun" data-cat="interior" data-lightbox data-full="images/gallery/19-detail-08.jpg"><img src="images/gallery/19-detail-08.jpg" alt="Interior seating arrangement detail at Farzi Café Dehradun" width="1120" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior styling detail at Farzi Café Dehradun" data-cat="interior" data-lightbox data-full="images/gallery/21-detail-09.jpg"><img src="images/gallery/21-detail-09.jpg" alt="Interior styling and decor detail at Farzi Café Dehradun" width="933" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior art detail at Farzi Café Dehradun" data-cat="interior" data-lightbox data-full="images/gallery/23-detail-10.jpg"><img src="images/gallery/23-detail-10.jpg" alt="Interior art and decor detail at Farzi Café Dehradun" width="933" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior texture detail at Farzi Café Dehradun" data-cat="interior" data-lightbox data-full="images/gallery/24-detail-11.jpg"><img src="images/gallery/24-detail-11.jpg" alt="Interior texture and material detail at Farzi Café Dehradun" width="933" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: rooftop evening detail at Farzi Café Dehradun" data-cat="rooftop" data-lightbox data-full="images/gallery/25-detail-12.jpg"><img src="images/gallery/25-detail-12.jpg" alt="Rooftop evening atmosphere detail at Farzi Café Dehradun" width="932" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: rooftop night view at Farzi Café Dehradun" data-cat="rooftop" data-lightbox data-full="images/gallery/26-detail-13.jpg"><img src="images/gallery/26-detail-13.jpg" alt="Rooftop night view and lighting at Farzi Café Dehradun" width="932" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: bar atmosphere detail at Farzi Café Dehradun" data-cat="bar" data-lightbox data-full="images/gallery/27-detail-14.jpg"><img src="images/gallery/27-detail-14.jpg" alt="Bar atmosphere and glassware detail at Farzi Café Dehradun" width="1013" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior feature wall at Farzi Café Dehradun" data-cat="interior" data-lightbox data-full="images/gallery/28-detail-15.jpg"><img src="images/gallery/28-detail-15.jpg" alt="Interior feature wall and design detail at Farzi Café Dehradun" width="933" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: rooftop landscape view at Farzi Café Dehradun" data-cat="rooftop" data-lightbox data-full="images/gallery/29-detail-16.jpg"><img src="images/gallery/29-detail-16.jpg" alt="Rooftop landscape view towards Dehradun hills from Farzi Café" width="1400" height="932" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior lighting detail at Farzi Café Dehradun" data-cat="interior" data-lightbox data-full="images/gallery/30-detail-17.jpg"><img src="images/gallery/30-detail-17.jpg" alt="Interior lighting and chandelier detail at Farzi Café Dehradun" width="932" height="1400" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: rooftop gathering space at Farzi Café Dehradun" data-cat="rooftop" data-lightbox data-full="images/gallery/31-detail-18.jpg"><img src="images/gallery/31-detail-18.jpg" alt="Rooftop gathering space and seating under the open sky at Farzi Café Dehradun" width="1400" height="932" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: bar shelving and bottles at Farzi Café Dehradun" data-cat="bar" data-lightbox data-full="images/gallery/32-detail-19.jpg"><img src="images/gallery/32-detail-19.jpg" alt="Bar back-shelving with curated spirits and bottles at Farzi Café Dehradun" width="1400" height="950" loading="lazy" /></div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open photo: interior dining setting at Farzi Café Dehradun" data-cat="interior" data-lightbox data-full="images/gallery/33-detail-20.jpg"><img src="images/gallery/33-detail-20.jpg" alt="Interior dining setting with table layout at Farzi Café Dehradun" width="1400" height="1030" loading="lazy" /></div>
 
       <!-- More videos -->
-      <div class="gallery-item" tabindex="0" role="button" data-cat="video" data-lightbox data-type="video" data-full="videos/farzi-cafe-tour-3.mp4">
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open Farzi Café Dehradun rooftop video" data-cat="video" data-lightbox data-type="video" data-full="videos/farzi-cafe-tour-3.mp4">
         <video src="videos/farzi-cafe-tour-3.mp4" muted loop playsinline preload="none" poster="images/hero/interior-f-logo.jpg" style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="video" data-lightbox data-type="video" data-full="videos/farzi-cafe-tour-4.mp4">
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open Farzi Café Dehradun rooftop video" data-cat="video" data-lightbox data-type="video" data-full="videos/farzi-cafe-tour-4.mp4">
         <video src="videos/farzi-cafe-tour-4.mp4" muted loop playsinline preload="none" poster="images/hero/terrace-signage-dusk.jpg" style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
-      <div class="gallery-item" tabindex="0" role="button" data-cat="video" data-lightbox data-type="video" data-full="videos/farzi-cafe-tour-5.mp4">
+      <div class="gallery-item" tabindex="0" role="button" aria-label="Open Farzi Café Dehradun rooftop video" data-cat="video" data-lightbox data-type="video" data-full="videos/farzi-cafe-tour-5.mp4">
         <video src="videos/farzi-cafe-tour-5.mp4" muted loop playsinline preload="none" poster="images/hero/sunset-rooftop-mountains.jpg" style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
 
@@ -284,7 +284,7 @@
       <div class="footer-col">
         <h4>Reach Us</h4>
         <p><a href="tel:+917617771124">+91 76177 71124</a></p>
-        <p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp Us</a></p>
+        <p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
@@ -307,7 +307,7 @@
 
 <script src="js/main.js" defer></script>
 <!-- Floating WhatsApp FAB -->
-<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.307 1.265.489 1.697.626.713.226 1.362.194 1.875.118.572-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
 </a>
 
@@ -317,7 +317,7 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
     Call
   </a>
-  <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="wa">
+  <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="wa">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
     WhatsApp
   </a>

@@ -43,13 +43,72 @@
   "url": "https://farzicafedehradun.com/menu.html",
   "inLanguage": "en-IN",
   "hasMenuSection": [
-    {"@type":"MenuSection","name":"Small Plates"},
-    {"@type":"MenuSection","name":"Main Course"},
-    {"@type":"MenuSection","name":"Pizza"},
-    {"@type":"MenuSection","name":"Asian"},
-    {"@type":"MenuSection","name":"Desserts"},
-    {"@type":"MenuSection","name":"Cocktails"},
-    {"@type":"MenuSection","name":"Beverages"}
+    {
+      "@type": "MenuSection",
+      "name": "Small Plates",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Galouti on a Stone",
+          "description": "Slow-cooked lamb galouti on warm Himalayan slate, saffron emulsion, mini ulte tawa parantha.",
+          "suitableForDiet": "https://schema.org/HalalDiet"
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Dal Chawal Arancini",
+          "description": "Yellow dal and basmati rolled into crisp arancini, smoked tomato chutney.",
+          "suitableForDiet": "https://schema.org/VegetarianDiet"
+        }
+      ]
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Main Course",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Lal Maas Risotto",
+          "description": "Rajasthani lal maas in mathania chillies, saffron arborio, bone marrow butter."
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Awadhi Lamb Dum Biryani",
+          "description": "Slow-cooked Awadhi lamb biryani sealed under handmade dough, broken open at the table. Mirchi ka salan, raita."
+        }
+      ]
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Pizza"
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Asian"
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Desserts"
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Cocktails",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Saffron Sour",
+          "description": "House gin, blood orange, Kashmiri saffron, citrus foam."
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Curry Leaf Gimlet",
+          "description": "House gin, fresh curry leaf cordial, lime."
+        }
+      ]
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Beverages"
+    }
   ]
 }
 </script>
@@ -165,7 +224,7 @@
     <h1><em>The Menu</em></h1>
     <p style="max-width:640px;margin:1.2rem auto 0;">Plates that take Indian classics and tilt them — a little science, a little theatre, a little nostalgia. <span class="gold">★</span> marks a Farzi signature.</p>
     <div class="gbp-cluster" style="justify-content:center;margin-top:1.6rem;">
-      <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi!%20I%27d%20like%20to%20see%20today%27s%20specials%20at%20Farzi%20Caf%C3%A9.&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="gbp-btn">
+      <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi!%20I%27d%20like%20to%20see%20today%27s%20specials%20at%20Farzi%20Caf%C3%A9.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="gbp-btn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
         Ask About Specials
       </a>
@@ -266,7 +325,7 @@
     <div class="text-center mt-2">
       <a href="contact.html#reserve" class="btn btn-solid">Book Your Table</a>
       &nbsp;
-      <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi!%20I%27d%20like%20to%20book%20a%20table%20at%20Farzi%20Caf%C3%A9%20Dehradun.&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="btn-whatsapp">
+      <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi!%20I%27d%20like%20to%20book%20a%20table%20at%20Farzi%20Caf%C3%A9%20Dehradun.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
         Book on WhatsApp
       </a>
@@ -299,7 +358,7 @@
       </details>
       <details class="faq-item">
         <summary>How do I see today's menu at Farzi Café Dehradun?</summary>
-        <div class="faq-item-body">The full menu — small plates, mains, pizza, Asian, desserts, cocktails and beverages — is on this page. WhatsApp <a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">+91 76177 71124</a> for the day's specials, seasonal additions, or to ask the kitchen about dietary requirements.</div>
+        <div class="faq-item-body">The full menu — small plates, mains, pizza, Asian, desserts, cocktails and beverages — is on this page. WhatsApp <a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">+91 76177 71124</a> for the day's specials, seasonal additions, or to ask the kitchen about dietary requirements.</div>
       </details>
       <details class="faq-item">
         <summary>What cuisines does Farzi Café Dehradun serve?</summary>
@@ -322,7 +381,7 @@
         <p>Modern Indian cuisine, crafted cocktails and rooftop views on Rajpur Road, Dehradun.</p>
       </div>
       <div class="footer-col"><h4>Visit</h4><p>222, Dhakpatti<br/>Rajpur Road<br/>Dehradun, Uttarakhand</p></div>
-      <div class="footer-col"><h4>Reach Us</h4><p><a href="tel:+917617771124">+91 76177 71124</a></p><p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp Us</a></p></div>
+      <div class="footer-col"><h4>Reach Us</h4><p><a href="tel:+917617771124">+91 76177 71124</a></p><p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></p></div>
       <div class="footer-col"><h4>Explore</h4><ul>
         <li><a href="menu.html">Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="events.html">Events</a></li>
         <li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
@@ -335,15 +394,9 @@
   </div>
 </footer>
 
-<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
 </a>
-<div class="mobile-cta-bar" aria-label="Quick actions">
-  <a href="tel:+917617771124" class="solid">Call</a>
-  <a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="wa">WhatsApp</a>
-  <a href="contact.html#reserve">Reserve</a>
-</div>
-
 <script src="js/main.js" defer></script>
 </body>
 </html>

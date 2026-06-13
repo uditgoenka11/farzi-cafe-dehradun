@@ -164,7 +164,7 @@
     <p style="max-width:680px;margin:1.2rem auto 0;">Dehradun's most photogenic rooftop is also its most accommodating. From cabana takeovers for two to full-rooftop buyouts for two hundred — we'll plan it, we'll cater it, we'll make it unforgettable.</p>
     <div class="gbp-cluster" style="justify-content:center;margin-top:1.6rem;">
       <a href="#enquiry" class="btn btn-solid">Send Enquiry</a>
-      <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi!%20I%27d%20like%20to%20enquire%20about%20hosting%20an%20event%20at%20Farzi%20Caf%C3%A9%20Dehradun.&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="btn-whatsapp">
+      <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi!%20I%27d%20like%20to%20enquire%20about%20hosting%20an%20event%20at%20Farzi%20Caf%C3%A9%20Dehradun.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
         WhatsApp Us
       </a>
@@ -181,23 +181,23 @@
 
     <div class="occasion-grid">
       <article class="occasion-card reveal">
-        <h3>🎂 Birthday Celebrations</h3>
+        <h3>Birthday · Cake reveal</h3>
         <p>Cabana décor, surprise cake reveal, custom cocktails, projection signage. Birthdays are our bread and butter — we run two to three a night on weekends.</p>
       </article>
       <article class="occasion-card reveal">
-        <h3>💐 Anniversary Dinners</h3>
+        <h3>Anniversary · Candlelit dinner</h3>
         <p>Reserved private corner, candlelit table, surprise dessert sequence with the couple's name in silver leaf. Champagne pours optional.</p>
       </article>
       <article class="occasion-card reveal">
-        <h3>💼 Corporate Events</h3>
+        <h3>Corporate · Client evenings</h3>
         <p>Team off-sites, product launches, client dinners. AV-equipped private wing for up to 60. NDAs respected, late-night flexibility, invoicing handled.</p>
       </article>
       <article class="occasion-card reveal">
-        <h3>👯 Kitty Parties</h3>
+        <h3>Kitty Party · Themed lunch</h3>
         <p>Themed lunches, set-menu pricing, games corner, Instagram-friendly photo wall. Booking from 12 PM onwards, weekdays preferred.</p>
       </article>
       <article class="occasion-card reveal">
-        <h3>🥂 Private Gatherings</h3>
+        <h3>Private Gathering · Rooftop buyout</h3>
         <p>Engagements, sangeets, baby showers, milestone birthdays. Six cabanas, full rooftop buyout option, decor and DJ coordination.</p>
       </article>
     </div>
@@ -237,7 +237,7 @@
         <h2>For the evening that has to be the one.</h2>
         <p>Take over the entire Farzi rooftop — 120 seated or 200 standing — with the Mussoorie hills as your backdrop. We work with Dehradun's best wedding planners and corporate teams to deliver evenings that are equal parts theatrical and effortless.</p>
         <p>Sangeet warm-ups, product launches, milestone birthdays — we handle AV, decor, custom menus and a 12-strong service team dedicated to your evening.</p>
-        <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi!%20I%27d%20like%20to%20enquire%20about%20a%20full%20rooftop%20buyout%20at%20Farzi%20Caf%C3%A9%20Dehradun.&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="btn-whatsapp">
+        <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi!%20I%27d%20like%20to%20enquire%20about%20a%20full%20rooftop%20buyout%20at%20Farzi%20Caf%C3%A9%20Dehradun.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
           WhatsApp the Events Team
         </a>
@@ -257,16 +257,18 @@
     <form class="event-enquiry" novalidate style="max-width:720px;margin:0 auto;">
       <div>
         <label for="ev-name">Your Name</label>
-        <input id="ev-name" name="name" type="text" required autocomplete="name" />
+        <input id="ev-name" name="name" type="text" required autocomplete="name" aria-describedby="ev-name-error" />
+        <div id="ev-name-error" class="field-error" role="alert" aria-live="polite" hidden>Please enter your name.</div>
       </div>
       <div class="form-row">
         <div>
           <label for="ev-phone">Phone</label>
-          <input id="ev-phone" name="phone" type="tel" required autocomplete="tel" />
+          <input id="ev-phone" name="phone" type="tel" required autocomplete="tel" aria-describedby="ev-phone-error" />
+          <div id="ev-phone-error" class="field-error" role="alert" aria-live="polite" hidden>Please enter your phone number.</div>
         </div>
         <div>
           <label for="ev-occasion">Occasion</label>
-          <select id="ev-occasion" name="occasion" required>
+          <select id="ev-occasion" name="occasion" required aria-describedby="ev-occasion-error">
             <option value="">Select</option>
             <option>Birthday Celebration</option>
             <option>Anniversary Dinner</option>
@@ -277,16 +279,19 @@
             <option>Full Rooftop Buyout</option>
             <option>Other</option>
           </select>
+          <div id="ev-occasion-error" class="field-error" role="alert" aria-live="polite" hidden>Please select an occasion.</div>
         </div>
       </div>
       <div class="form-row">
         <div>
           <label for="ev-guests">Guests</label>
-          <input id="ev-guests" name="guests" type="number" min="2" max="200" required />
+          <input id="ev-guests" name="guests" type="number" min="2" max="200" required aria-describedby="ev-guests-error" />
+          <div id="ev-guests-error" class="field-error" role="alert" aria-live="polite" hidden>Please enter the number of guests.</div>
         </div>
         <div>
           <label for="ev-date">Preferred Date</label>
-          <input id="ev-date" name="date" type="date" required />
+          <input id="ev-date" name="date" type="date" required aria-describedby="ev-date-error" />
+          <div id="ev-date-error" class="field-error" role="alert" aria-live="polite" hidden>Please select a preferred date.</div>
         </div>
       </div>
       <div>
@@ -316,7 +321,7 @@
         <h3>Sunday Brunch on the Rooftop</h3>
         <p>Free-flowing prosecco, six-station modern Indian spread, live acoustic guitar from 12:30 PM. ₹ 2,499 per guest.</p>
       </div>
-      <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi!%20I%27d%20like%20to%20book%20the%20Sunday%20Brunch%20on%2015%20June.&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="btn">Reserve</a>
+      <a href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi!%20I%27d%20like%20to%20book%20the%20Sunday%20Brunch%20on%2015%20June.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn">Reserve</a>
     </div>
 
     <div class="event-row reveal" data-event-iso="2026-06-22">
@@ -405,7 +410,7 @@
         <p>Modern Indian cuisine, crafted cocktails and rooftop views on Rajpur Road, Dehradun.</p>
       </div>
       <div class="footer-col"><h4>Visit</h4><p>222, Dhakpatti<br/>Rajpur Road<br/>Dehradun, Uttarakhand</p></div>
-      <div class="footer-col"><h4>Reach Us</h4><p><a href="tel:+917617771124">+91 76177 71124</a></p><p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp Us</a></p></div>
+      <div class="footer-col"><h4>Reach Us</h4><p><a href="tel:+917617771124">+91 76177 71124</a></p><p><a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></p></div>
       <div class="footer-col"><h4>Explore</h4><ul>
         <li><a href="menu.html">Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="events.html">Events</a></li>
         <li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
@@ -418,12 +423,12 @@
   </div>
 </footer>
 
-<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21%20I%27d%20like%20to%20enquire%20about%20an%20event.&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="fab-whatsapp" href="https://api.whatsapp.com/send/?phone=917617771124&text=Hi%20Farzi%20Caf%C3%A9%20Dehradun%21%20I%27d%20like%20to%20enquire%20about%20an%20event.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
 </a>
 <div class="mobile-cta-bar" aria-label="Quick actions">
   <a href="tel:+917617771124" class="solid">Call</a>
-  <a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="wa">WhatsApp</a>
+  <a href="https://api.whatsapp.com/send/?phone=917617771124&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="wa">WhatsApp</a>
   <a href="#enquiry">Enquire</a>
 </div>
 

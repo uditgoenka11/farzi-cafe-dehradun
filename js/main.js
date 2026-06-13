@@ -78,6 +78,7 @@
   const lbImg = lb ? lb.querySelector('.lightbox-media') : null;
   let lbItems = [];
   let lbIndex = 0;
+  let lbPreviousFocus = null; // saved focus target for restore on close
 
   function openLightbox(idx) {
     if (!lb || !lbItems.length) return;
@@ -90,14 +91,31 @@
         ? '<video src="' + src + '" controls autoplay playsinline></video>'
         : '<img src="' + src + '" alt="' + (item.querySelector('img')?.alt || '') + '" />';
     }
+    // ARIA: mark as a modal dialog
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Image lightbox');
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';
+    // Save the element that had focus so we can restore it on close
+    lbPreviousFocus = document.activeElement;
+    // Move focus to the close button
+    const closeBtn = lb.querySelector('.lightbox-close');
+    if (closeBtn) closeBtn.focus();
   }
   function closeLightbox() {
     if (!lb) return;
     lb.classList.remove('open');
+    lb.removeAttribute('role');
+    lb.removeAttribute('aria-modal');
+    lb.removeAttribute('aria-label');
     if (lbImg) lbImg.innerHTML = '';
     document.body.style.overflow = '';
+    // Restore focus to the element that triggered the lightbox
+    if (lbPreviousFocus && typeof lbPreviousFocus.focus === 'function') {
+      lbPreviousFocus.focus();
+    }
+    lbPreviousFocus = null;
   }
 
   if (lb) {
@@ -111,9 +129,23 @@
     lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
     document.addEventListener('keydown', (e) => {
       if (!lb.classList.contains('open')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') openLightbox(lbIndex + 1);
-      if (e.key === 'ArrowLeft') openLightbox(lbIndex - 1);
+      if (e.key === 'Escape') { closeLightbox(); return; }
+      if (e.key === 'ArrowRight') { openLightbox(lbIndex + 1); return; }
+      if (e.key === 'ArrowLeft')  { openLightbox(lbIndex - 1); return; }
+      // Tab trap: cycle focus through close / prev / next buttons only
+      if (e.key === 'Tab') {
+        const focusable = Array.from(
+          lb.querySelectorAll('.lightbox-close, .lightbox-prev, .lightbox-next')
+        ).filter(el => !el.disabled);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last  = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+          if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+        }
+      }
     });
   }
 
@@ -128,8 +160,6 @@
   });
 
   // ---------- Footer year ----------
-  const yearEl = document.querySelector('[data-year]');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
   document.querySelectorAll('[data-year]').forEach((n) => { n.textContent = new Date().getFullYear(); });
 
   // ---------- Past events: dim row + remove Reserve button ----------
@@ -231,9 +261,35 @@
       const name = (data.get('name') || '').toString().trim();
       const phone = (data.get('phone') || '').toString().trim();
       const guests = (data.get('guests') || '').toString().trim();
-      const date = formatBookingDate((data.get('date') || '').toString().trim());
-      const time = formatBookingTime((data.get('time') || '').toString().trim());
+      const rawDate = (data.get('date') || '').toString().trim();
+      const rawTime = (data.get('time') || '').toString().trim();
       const notes = (data.get('notes') || '').toString().trim();
+
+      // Validate required fields before opening WhatsApp
+      const required = [
+        { value: name,    field: form.querySelector('[name="name"]') },
+        { value: phone,   field: form.querySelector('[name="phone"]') },
+        { value: guests,  field: form.querySelector('[name="guests"]') },
+        { value: rawDate, field: form.querySelector('[name="date"]') },
+        { value: rawTime, field: form.querySelector('[name="time"]') },
+      ];
+      const firstEmpty = required.find(r => !r.value);
+      if (firstEmpty) {
+        // Mark invalid and focus
+        required.forEach(r => {
+          if (r.field) r.field.removeAttribute('aria-invalid');
+        });
+        if (firstEmpty.field) {
+          firstEmpty.field.setAttribute('aria-invalid', 'true');
+          firstEmpty.field.focus();
+        }
+        return; // abort — do NOT open WhatsApp
+      }
+      // Clear any prior aria-invalid marks
+      required.forEach(r => { if (r.field) r.field.removeAttribute('aria-invalid'); });
+
+      const date = formatBookingDate(rawDate);
+      const time = formatBookingTime(rawTime);
 
       const msg =
         'Hi Farzi Café Dehradun! I would like to book a table.\n\n' +
@@ -247,7 +303,7 @@
       trackConversion('reservation_form_submit', {
         guests: guests, date: date, time: time, has_notes: notes ? 1 : 0,
       });
-      window.open(buildWaUrl(msg), '_blank');
+      window.open(buildWaUrl(msg), '_blank', 'noopener,noreferrer');
     });
   }
 
@@ -257,15 +313,38 @@
     eventForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const d = new FormData(eventForm);
+      const evName    = (d.get('name')    || '').toString().trim();
+      const evPhone   = (d.get('phone')   || '').toString().trim();
+      const evGuests  = (d.get('guests')  || '').toString().trim();
+      const evDate    = (d.get('date')    || '').toString().trim();
+
+      // Validate required fields before opening WhatsApp
+      const evRequired = [
+        { value: evName,   field: eventForm.querySelector('[name="name"]') },
+        { value: evPhone,  field: eventForm.querySelector('[name="phone"]') },
+        { value: evGuests, field: eventForm.querySelector('[name="guests"]') },
+        { value: evDate,   field: eventForm.querySelector('[name="date"]') },
+      ];
+      const evFirstEmpty = evRequired.find(r => !r.value);
+      if (evFirstEmpty) {
+        evRequired.forEach(r => { if (r.field) r.field.removeAttribute('aria-invalid'); });
+        if (evFirstEmpty.field) {
+          evFirstEmpty.field.setAttribute('aria-invalid', 'true');
+          evFirstEmpty.field.focus();
+        }
+        return; // abort — do NOT open WhatsApp
+      }
+      evRequired.forEach(r => { if (r.field) r.field.removeAttribute('aria-invalid'); });
+
       const msg =
         'Hi Farzi Café Dehradun! I would like to host an event with you.\n\n' +
-        'Name: ' + (d.get('name') || '') + '\n' +
-        'Phone: ' + (d.get('phone') || '') + '\n' +
+        'Name: ' + evName + '\n' +
+        'Phone: ' + evPhone + '\n' +
         'Occasion: ' + (d.get('occasion') || '') + '\n' +
-        'Guests: ' + (d.get('guests') || '') + '\n' +
-        'Date: ' + (d.get('date') || '') + '\n' +
+        'Guests: ' + evGuests + '\n' +
+        'Date: ' + evDate + '\n' +
         'Notes: ' + (d.get('notes') || '');
-      window.open(buildWaUrl(msg), '_blank');
+      window.open(buildWaUrl(msg), '_blank', 'noopener,noreferrer');
     });
   }
 
@@ -363,6 +442,9 @@
     };
 
     if (preloaderSeen) {
+      // Suppress video fetch on repeat visits — saves ~80KB every page load.
+      const introVideoEl = preloader.querySelector('.preloader-video');
+      if (introVideoEl) introVideoEl.preload = 'none';
       preloader.classList.add('skip');
     } else if (prefersReducedMotion) {
       // Reduced motion: show static F monogram + bar, dismiss after load
@@ -522,6 +604,6 @@
 
   // ---------- Expose WA helper for inline use ----------
   window.farziWa = function (text) {
-    window.open(buildWaUrl(text || 'Hi Farzi Café Dehradun!'), '_blank');
+    window.open(buildWaUrl(text || 'Hi Farzi Café Dehradun!'), '_blank', 'noopener,noreferrer');
   };
 })();
