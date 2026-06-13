@@ -161,7 +161,7 @@
     background: var(--color-bg);
   }
   .optional-form-inner {
-    max-width: 640px; margin: 0 auto;
+    max-width: 720px; margin: 0 auto;
     padding: 0 var(--gutter); text-align: center;
   }
   .optional-form .roman { margin-bottom: 1.4rem; }
@@ -174,9 +174,20 @@
   .optional-form p.lead {
     font-family: var(--font-display);
     font-size: 1.1rem; color: var(--color-text-dim);
-    margin: 0 0 2.6rem;
+    margin: 0 0 3rem;
   }
-  .optional-form form.reservation { text-align: left; }
+  /* Form card — intentional gold-on-black premium reservation panel */
+  .optional-form form.reservation {
+    text-align: left;
+    background: linear-gradient(180deg, rgba(201,169,97,0.04), rgba(201,169,97,0.02));
+    border: 1px solid rgba(201,169,97,0.32);
+    padding: clamp(2.4rem, 4.5vw, 3.4rem) clamp(2rem, 4vw, 3rem);
+    border-radius: 2px;
+    box-shadow: 0 30px 60px -30px rgba(0,0,0,0.55), inset 0 1px 0 rgba(201,169,97,0.05);
+  }
+  @media (max-width: 540px) {
+    .optional-form form.reservation { padding: 2rem 1.4rem; }
+  }
 
   /* Map */
   .contact-map {

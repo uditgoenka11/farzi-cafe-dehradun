@@ -805,26 +805,78 @@ section { padding: clamp(4rem, 10vw, 8rem) 0; }
 .info-block h3 { color: var(--color-gold); font-family: var(--font-accent); letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 0.4rem; }
 .info-block p { margin: 0; color: var(--color-text); }
 
-form.reservation, form.event-enquiry { display: flex; flex-direction: column; gap: 1rem; }
-form.reservation, form.event-enquiry label { display: block; font-family: var(--font-accent); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-text-dim); margin-bottom: 0.3rem; }
-form.reservation, form.event-enquiry input, form.reservation, form.event-enquiry select, form.reservation, form.event-enquiry textarea {
+form.reservation,
+form.event-enquiry {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+form.reservation label,
+form.event-enquiry label {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  margin-bottom: 0.7rem;
+}
+form.reservation input,
+form.reservation select,
+form.reservation textarea,
+form.event-enquiry input,
+form.event-enquiry select,
+form.event-enquiry textarea {
   width: 100%;
+  display: block;
   background: var(--color-bg-2);
   border: 1px solid var(--color-line);
   color: var(--color-text);
-  padding: 0.95rem 1rem;
+  padding: 1.05rem 1.2rem;
   font-family: var(--font-body);
-  font-size: 0.96rem;
+  font-size: 1rem;
+  line-height: 1.4;
   border-radius: var(--radius);
-  transition: border-color var(--transition);
+  box-sizing: border-box;
+  transition: border-color var(--transition), background var(--transition);
 }
-form.reservation, form.event-enquiry input:focus, form.reservation, form.event-enquiry select:focus, form.reservation, form.event-enquiry textarea:focus {
+form.reservation input:hover,
+form.reservation select:hover,
+form.reservation textarea:hover,
+form.event-enquiry input:hover,
+form.event-enquiry select:hover,
+form.event-enquiry textarea:hover {
+  border-color: rgba(201, 169, 97, 0.36);
+}
+form.reservation input:focus,
+form.reservation select:focus,
+form.reservation textarea:focus,
+form.event-enquiry input:focus,
+form.event-enquiry select:focus,
+form.event-enquiry textarea:focus {
   outline: none;
   border-color: var(--color-gold);
+  background: var(--color-bg);
 }
-form.reservation, form.event-enquiry textarea { resize: vertical; min-height: 120px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+form.reservation textarea,
+form.event-enquiry textarea {
+  resize: vertical;
+  min-height: 160px;
+  line-height: 1.6;
+}
+form.reservation button[type="submit"],
+form.event-enquiry button[type="submit"] {
+  margin-top: 0.6rem;
+  min-height: 60px;
+  font-size: 0.82rem;
+  letter-spacing: 0.28em;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem 1.4rem;
+}
+@media (max-width: 540px) { .form-row { grid-template-columns: 1fr; gap: 1.6rem; } }
 .field-hint {
   display: block;
   margin-top: 0.45rem;
