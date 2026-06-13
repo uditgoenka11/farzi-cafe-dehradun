@@ -1921,9 +1921,12 @@ summary:focus-visible,
   border-radius: 2px;
 }
 /* Form fields get a stronger focus state */
-form.reservation, form.event-enquiry input:focus,
-form.reservation, form.event-enquiry select:focus,
-form.reservation, form.event-enquiry textarea:focus {
+form.reservation input:focus,
+form.reservation select:focus,
+form.reservation textarea:focus,
+form.event-enquiry input:focus,
+form.event-enquiry select:focus,
+form.event-enquiry textarea:focus {
   outline: 2px solid var(--color-gold);
   outline-offset: 2px;
   border-color: var(--color-gold);
@@ -1938,17 +1941,23 @@ form.reservation, form.event-enquiry textarea:focus {
 .lightbox-next { min-width: 44px; min-height: 44px; }
 
 /* --- iOS form-input zoom prevention — 16px or larger triggers no zoom --- */
-form.reservation, form.event-enquiry input,
-form.reservation, form.event-enquiry select,
-form.reservation, form.event-enquiry textarea {
+form.reservation input,
+form.reservation select,
+form.reservation textarea,
+form.event-enquiry input,
+form.event-enquiry select,
+form.event-enquiry textarea {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
 }
 @media (min-width: 720px) {
-  form.reservation, form.event-enquiry input,
-  form.reservation, form.event-enquiry select,
-  form.reservation, form.event-enquiry textarea {
-    font-size: 0.95rem; /* shrink back on desktop where zoom doesn't apply */
+  form.reservation input,
+  form.reservation select,
+  form.reservation textarea,
+  form.event-enquiry input,
+  form.event-enquiry select,
+  form.event-enquiry textarea {
+    font-size: 1rem; /* keep the body-size from the canonical rule */
   }
 }
 
