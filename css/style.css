@@ -1381,6 +1381,8 @@ article.post .post-meta {
   white-space: nowrap;
   position: relative;
 }
+.awards-row .award-pub { font-style: italic; }
+.awards-row .award-detail { font-style: italic; }
 .awards-row .award + .award::before {
   content: '·';
   margin-right: 1.4rem;
@@ -1388,9 +1390,10 @@ article.post .post-meta {
   font-style: normal;
 }
 @media (max-width: 880px) {
-  .awards-row { gap: 0.6rem 1rem; }
-  .awards-row .award { font-size: 0.84rem; white-space: normal; }
-  .awards-row .award + .award::before { margin-right: 0.7rem; }
+  .awards-row { gap: 0.5rem 1.1rem; }
+  .awards-row .award { font-size: 0.86rem; white-space: nowrap; }
+  .awards-row .award-detail { display: none; }
+  .awards-row .award + .award::before { margin-right: 0.8rem; }
 }
 
 /* ---------- Signature Dishes — From the Kitchen section ---------- */
